@@ -1,0 +1,7 @@
+{
+  "name": "andreavendrik-nl",
+  "short_name": "andreavendrik-nl",
+  "description": "Portfolio website of Andrea Vendrik",
+  "start_url": "/",
+  "display": "standalone"
+}
