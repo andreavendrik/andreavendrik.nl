@@ -1,14 +1,20 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../portfolio-project/portfolio-project.html">
 
 <dom-module id="andreavendrik-website">
   <template>
     <style>
-      :host {
-        display: block;
+      portfolio-project {
+        --container-color: #FFBD67;
       }
     </style>
-    <h2>Hello [[prop1]]</h2>
-  </template>
+
+    <portfolio-project
+    image="../portfolio-project/images/Bericht_Gemist/bg_02.jpg"
+    title="Bericht Gemist"
+    title-description="Newspaper design"
+    ></portfolio-project>
+    </template>
 
   <script>
     Polymer({
