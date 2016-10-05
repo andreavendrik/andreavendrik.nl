@@ -42,12 +42,13 @@
       }
 
       #intro {
-        height:85vh;
+        min-height:85vh;
         background-color: #00D4FF;
         display:flex;
         flex-direction: column;
         justify-content: center;
       }
+
 
       .text-container {
         max-width:900px;
@@ -72,6 +73,11 @@
         top:20px;
         justify-content:space-between;
         align-items: center;
+      }
+      @media (max-width:700px) {
+        #menu-right {
+          display:none;
+        }
       }
 
       .menu-element {
@@ -129,6 +135,12 @@
       #contact-information {
         display:flex;
         max-width:850px;
+        flex-wrap: wrap;
+      }
+      @media (max-width:700px) {
+        #contact-information {
+
+        }
       }
 
       #contact-information div {
@@ -139,11 +151,11 @@
     </style>
 
     <section id="menu">
-      <div class="menu-element">
+      <div class="menu-element" id="menu-left">
         <h3><span id="andrea">andrea vendrik</span><br>
         graphic designer</h3>
       </div>
-      <div class="menu-element">
+      <div class="menu-element" id="menu-right">
         <h3>about</h3>
         <h3>work</h3>
         <button id="hire-me">hire me!</button>

@@ -62,6 +62,16 @@
         max-height:100%;
       }
 
+      .description-container {
+        background-color: transparent;
+      }
+        @media (max-width:700px) {
+          .description-container {
+            background-color: white;
+            opacity:0.9;
+          }
+        }
+
       .title-block {
         background-color:white;
         opacity:0.9;
@@ -70,6 +80,15 @@
         position:absolute;
         left:30px;
         bottom:100px;
+      }
+      @media (max-width: 700px) {
+        .title-block {
+          position:relative;
+          left:auto;
+          bottom:auto;
+          width:100%;
+          background-color:transparent;
+        }
       }
 
       #show-description {
@@ -85,6 +104,14 @@
         position:absolute;
         left:30px;
         bottom:30px;
+      }
+      @media (max-width:700px) {
+        #show-description {
+          position:relative;
+          bottom:auto;
+          left:auto;
+          margin:0px 0px 20px 20px;
+        }
       }
 
       #show-description:hover {
@@ -133,10 +160,6 @@
         display:none;
       }
 
-      .description-container {
-        position:relative;
-      }
-
       #description-heading-for {
         width:100%;
       }
@@ -149,14 +172,14 @@
         <img src$="[[resolveUrl(image)]]">
       </figure>
 
-      <div class="title-block">
-        <h2>[[titleDescription]]</h2>
-        <h1>[[title]]</h1>
-      </div>
+      <div class="description-container">
+        <div class="title-block">
+          <h2>[[titleDescription]]</h2>
+          <h1>[[title]]</h1>
+        </div>
 
-
-      <section class="description-container">
         <button id="show-description" on-tap="toggleDescription">about project</button>
+      </div>
 
         <div id="description-block" hidden$="[[hideDescription]]">
 
@@ -174,7 +197,6 @@
         </div>
 
       </div>
-    </section>
 
     </div>
 
