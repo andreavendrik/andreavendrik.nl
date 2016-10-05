@@ -144,6 +144,11 @@
           display:none;
         }
       }
+      #menu a {
+        color:black;
+        cursor:pointer;
+        text-decoration: none;
+      }
 
       .menu-element {
         display:flex;
@@ -254,9 +259,9 @@
         graphic designer</h3>
       </div>
       <div class="menu-element" id="menu-right">
-        <h3>about</h3>
-        <h3>work</h3>
-        <button class="button">hire me!</button>
+        <a href="#about"><h3>about</h3></a>
+        <a href="#work"><h3>work</h3></a>
+        <a href="#hire-me"><button class="button">hire me!</button></a>
       </div>
       <div class="menu-mobile-button">
         <button class="button" on-tap="toggleMenu">menu</button>
@@ -281,7 +286,7 @@
 
     </section>
 
-    <section class="text-container">
+    <section id="about" class="text-container">
         <p>As a designer I love me some variety. Websites, books, apps, logos, posters… my portfolio is wildly diverse.</p>
 
         <p>
@@ -311,7 +316,7 @@
       </div>
     </div>
 
-    <portfolio-project
+    <portfolio-project id="work"
     image="../portfolio-project/images/Bericht_Gemist/bg_02.jpg"
     title="Bericht Gemist"
     title-description="newspaper design"
