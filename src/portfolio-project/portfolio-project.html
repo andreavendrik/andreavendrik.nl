@@ -2,11 +2,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script type="text/javascript" src="test.js"></script>
-<script>
-  $("#show-description").click(function(){
-    $("description-block").toggle();
-  });
-</script>
 <dom-module id="portfolio-project">
 
   <template>
@@ -38,15 +33,17 @@
       }
 
       .project-container {
-        width:100vw;
+        width:100%;
         background-color: var(--container-color, white);
         position:relative;
+        display:flex;
+        flex-direction: column;
       }
 
       figure {
-        max-width:800px;
         margin:auto;
         padding:40px;
+        max-width:800px;
       }
 
       figure img {
@@ -81,6 +78,7 @@
 
       #show-description:hover {
         background-color:white;
+        transition: 0.3s;
       }
 
       #description-block {
