@@ -43,7 +43,7 @@
       }
 
       a {
-        color:#FF001F;
+        color:#E7001C;
       }
 
       a:hover {
@@ -51,13 +51,13 @@
       }
 
       #intro {
-        min-height:85vh;
-        background-color: #00D4FF;
+        background-color: #00D3FF;
         display:flex;
         flex-direction: column;
         justify-content: center;
         /*background-image: url('../portfolio-project/images/background.png');*/
         background-position: -350px -350px;
+        padding:100px 0px;
         background-blend-mode:color-dodge;
       }
       @media (max-width:700px) {
@@ -102,7 +102,7 @@
         display:none;
       }
       #more-about-me {
-        width:100%;
+        max-width:100%;
         background-color: #FFF2F3;
         margin-top:-75px;
         padding:100px 0px;
@@ -277,10 +277,23 @@
       }
 
       #project-ps {
-        --container-color: #E5EAFE;
+        --container-color: #7986CB;
+      }
+      @media (max-width:700px) {
+        #project-ps {
+          --container-color: #fff;
+        }
       }
       #project-wykygo {
-        --container-color: #1C6EF8;
+        --container-color: #F7EF0A;
+      }
+      @media (max-width:700px) {
+        #project-wykygo {
+          --container-color: #C5CAE9;
+        }
+      }
+      #project-ts {
+        --container-color: #D4D4D4;
       }
       #project-wwwhw {
         --container-color: #E5E2D9;
@@ -292,7 +305,7 @@
         --container-color: #D7D7D0;
       }
       #project-nostalgia {
-        --container-color: #fff;
+        --container-color: #FFD4EC;
       }
       #project-vm {
         --container-color: #CBE8D9;
@@ -324,7 +337,7 @@
       </div>
       <div class="menu-element" id="menu-right">
         <a href="#about"><h3>about</h3></a>
-        <a href="#work"><h3>work</h3></a>
+        <a href="#project-ps"><h3>work</h3></a>
         <a href="#hire-me"><button class="button">hire me!</button></a>
       </div>
       <div class="menu-mobile-button">
@@ -402,7 +415,7 @@
     </portfolio-project>
 
     <portfolio-project id="project-ts"
-    image="../portfolio-project/images/True_Story/ts_01.png"
+    image="../portfolio-project/images/True_Story/ts_03.png"
     title="True Story?"
     title-description="app & visual identity design"
     description-what="app"
@@ -552,7 +565,7 @@
 
 <!-- Contact information -->
 
-    <section class="text-container">
+    <section id="hire-me" class="text-container">
       <p>
         I am open to commissions.<br>
         Be it a visual identity, website, book, app, big or small project, I can help you.
