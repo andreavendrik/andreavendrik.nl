@@ -110,6 +110,12 @@
         flex-wrap:wrap;
         justify-content:center;
       }
+      @media (max-width:700px) {
+        #more-about-me {
+          padding:25px;
+          margin-top:-25px;
+        }
+      }
       #more-about-me div {
         flex:display;
         flex-direction:column;
@@ -118,6 +124,12 @@
         max-width:400px;
         margin-right:50px;
       }
+      @media (max-width:800px) {
+        #more-about-me img {
+          margin-right:0px;
+          max-width:100%;
+        }
+      }
 
       #more-about-me p {
         padding:0px;
@@ -125,6 +137,16 @@
         font-family:'Work Sans', sans-serif;
         font-size:20px;
         line-height:28px;
+      }
+      @media (max-width:700px) {
+        #more-about-me p {
+          max-width:100%;
+          font-family:'Work Sans', sans-serif;
+          font-size:16px;
+          line-height:24px;
+          font-weight: 400;
+          /*padding:25px;*/
+        }
       }
 
       #menu {
