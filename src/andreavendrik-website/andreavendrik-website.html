@@ -7,12 +7,73 @@
       portfolio-project {
         --container-color: #FFBD67;
       }
+
+      h2 {
+        font-family: 'Work Sans';
+        font-weight: 400;
+        font-size: 16px;
+        margin:0px;
+      }
+
+      #menu {
+        position:fixed;
+        box-sizing:border-box;
+        width:100vw;
+        display:flex;
+        padding:10px 50px;
+        z-index:9999;
+        top:20px;
+        justify-content:space-between;
+        align-items: center;
+      }
+
+      .menu-element {
+        display:flex;
+        align-items: center;
+      }
+
+      .menu-element h2 {
+        margin:0px 60px 0px 0px;
+      }
+
+      #hire-me {
+        background-color: transparent;
+        border: 1px solid black;
+        display: inline-block;
+        padding: 12px 12px;
+        font-size:16px;
+        width:100px;
+        height:50px;
+        text-align:center;
+      }
+
+      #andrea {
+        font-weight:600;
+      }
+
     </style>
+
+    <section id="menu">
+      <div class="menu-element">
+        <h2><span id="andrea">andrea vendrik</span><br>
+        graphic designer</h2>
+      </div>
+      <div class="menu-element">
+        <h2>about</h2>
+        <h2>work</h2>
+        <button id="hire-me">hire me!</button>
+      </div>
+    </section>
 
     <portfolio-project
     image="../portfolio-project/images/Bericht_Gemist/bg_02.jpg"
     title="Bericht Gemist"
-    title-description="Newspaper design"
+    title-description="newspaper design"
+    description-what="poster, DVD sleeve and film titling"
+    description-for="So Help Me God, a documentary by Thomas Vroege."
+    description-body="B:g (bericht: gemist, message: missed) is the title of an imaginary newspaper supplement. The content is made up of ‘messages’ that have each been put together by crossing out words from a randomly selected newspaper article, until a single sentence remains. These sentences make up little stories which all share an element of humour, surprise or lunacy.
+
+    The title ‘message: missed’ refers to the reader having failed to discover these messages in the original news articles, while they were certainly worth reading. B:g breaks away from the usually crammed ordinary newspaper and makes for an interesting read."
     ></portfolio-project>
     </template>
 
