@@ -72,7 +72,7 @@
       .text-container {
         max-width:900px;
         margin:auto;
-        padding:100px 50px;
+        padding:75px 50px;
         box-sizing:border-box;
       }
       @media (max-width:700px) {
@@ -93,6 +93,35 @@
           line-height:32px;
           font-weight: 400;
         }
+      }
+
+      #more-about-me[hidden] {
+        display:none;
+      }
+      #more-about-me {
+        width:100%;
+        background-color: #FFF2F3;
+        margin-top:-75px;
+        padding:100px 0px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+      #more-about-me div {
+        flex:display;
+        flex-direction:column;
+      }
+      #more-about-me img {
+        max-width:400px;
+        margin-right:50px;
+      }
+
+      #more-about-me p {
+        padding:0px;
+        max-width:400px;
+        font-family:'Work Sans', sans-serif;
+        font-size:20px;
+        line-height:28px;
       }
 
       #menu {
@@ -159,7 +188,7 @@
         width:100%;
       }
 
-      #button {
+      .button {
         background-color: transparent;
         border: 1px solid black;
         display: inline-block;
@@ -171,9 +200,13 @@
         text-align:center;
       }
 
-      #button:hover {
+      .button:hover {
         background-color:white;
         transition: 0.3s;
+      }
+
+      .button-download {
+        width:135px;
       }
 
       #andrea {
@@ -223,10 +256,10 @@
       <div class="menu-element" id="menu-right">
         <h3>about</h3>
         <h3>work</h3>
-        <button id="button">hire me!</button>
+        <button class="button">hire me!</button>
       </div>
       <div class="menu-mobile-button">
-        <button id="button" on-tap="toggleMenu">menu</button>
+        <button class="button" on-tap="toggleMenu">menu</button>
       </div>
     </section>
 
@@ -256,13 +289,27 @@
         </p>
 
         <button id="show-more" on-tap="toggleMore">more about me</button>
-
-        <div id="more-about-me" hidden$="[[hideMore]]">
-          blabla
-        </div>
     </section>
 
-
+    <div id="more-about-me" hidden$="[[hideMore]]">
+      <div>
+        <img src="../portfolio-project/images/about.png">
+      <p>
+        <button class="button button-download">download cv</button>
+      </p>
+      </div>
+      <div>
+        <p>
+          With a background in sociology, I have a special interest in people and society. I am intrigued with how people make sense and construct the world around them. This interest resonates in my autonomous projects, which reflect on societal topics and aim to increase understanding or stir discussion amongst the viewers.
+        </p>
+        <p>
+          The connection between social sciences and design can be found in a strong will to understand and (visually) order the world of people and information. Unclarity genuinely upsets me. Thus, what I love most about design is translating raw information into a clear, useable designs.
+        </p>
+        <p>
+          I am a generalist at heart. Besides graphic design, I love writing and illustrating.
+        </p>
+      </div>
+    </div>
 
     <portfolio-project
     image="../portfolio-project/images/Bericht_Gemist/bg_02.jpg"
