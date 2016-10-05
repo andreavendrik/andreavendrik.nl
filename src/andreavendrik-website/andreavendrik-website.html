@@ -1,4 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../portfolio-text/portfolio-text.html">
 <link rel="import" href="../portfolio-project/portfolio-project.html">
 
 <dom-module id="andreavendrik-website">
@@ -8,17 +9,42 @@
         --container-color: #FFBD67;
       }
 
+      h1 {
+        font-family: 'Bagnard';
+        font-weight: 400;
+        font-size: 60px;
+        line-height:70px;
+        max-width:850px;
+        margin:50px 0px 0px 0px;
+      }
+
       h2 {
+        font-family: 'Work Sans';
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 35px;
+        margin:0px;
+      }
+
+      h3 {
         font-family: 'Work Sans';
         font-weight: 400;
         font-size: 16px;
         margin:0px;
       }
 
+      #intro {
+        height:85vh;
+        background-color: #00D4FF;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
       #menu {
         position:fixed;
         box-sizing:border-box;
-        width:100vw;
+        width:100%;
         display:flex;
         padding:10px 50px;
         z-index:9999;
@@ -32,7 +58,7 @@
         align-items: center;
       }
 
-      .menu-element h2 {
+      .menu-element h3 {
         margin:0px 60px 0px 0px;
       }
 
@@ -47,23 +73,79 @@
         text-align:center;
       }
 
+      #hire-me:hover {
+        background-color:white;
+        transition: 0.3s;
+      }
+
       #andrea {
         font-weight:600;
+      }
+
+      .text-container {
+        max-width:100%;
+        padding:100px 80px;
+        box-sizing:border-box;
+        display:flex;
+        flex-direction: column;
+      }
+
+      #show-more {
+        background-color: transparent;
+        color: #FF001F;
+        border: 1px solid #FF001F;
+        display: inline-block;
+        padding: 12px;
+        font-size:16px;
+        width:140px;
+        height:50px;
+        text-align:center;
+      }
+
+      #show-more:hover {
+        color:white;
+        background-color:#FF001F;
+        transition: 0.3s;
       }
 
     </style>
 
     <section id="menu">
       <div class="menu-element">
-        <h2><span id="andrea">andrea vendrik</span><br>
-        graphic designer</h2>
+        <h3><span id="andrea">andrea vendrik</span><br>
+        graphic designer</h3>
       </div>
       <div class="menu-element">
-        <h2>about</h2>
-        <h2>work</h2>
+        <h3>about</h3>
+        <h3>work</h3>
         <button id="hire-me">hire me!</button>
       </div>
     </section>
+
+    <section class="text-container" id="intro">
+
+      <h2>Oh, hello. You look mighty nice today! 😏<br>
+      Anyway, allow me to introduce myself:</h2>
+
+      <h1>My name is Andrea Vendrik.<br>
+      I am a graphic designer based in Amsterdam.</h1>
+
+    </section>
+
+    <section class="text-container">
+      <portfolio-text
+        content="As a designer I love me some variety. Websites, books, apps, logos, posters… my portfolio is wildly diverse.
+
+        I spend most of my time designing. Therefore you will find both commissioned and autonomous projects. With a background in social sciences, I have a special interest in socially relevant projects."></portfolio-text>
+
+        <button id="show-more" on-tap="toggleMore">more about me</button>
+
+        <div id="more-about-me" hidden$="[[hideMore]]">
+          blabla
+        </div>
+    </section>
+
+
 
     <portfolio-project
     image="../portfolio-project/images/Bericht_Gemist/bg_02.jpg"
@@ -75,6 +157,18 @@
 
     The title ‘message: missed’ refers to the reader having failed to discover these messages in the original news articles, while they were certainly worth reading. B:g breaks away from the usually crammed ordinary newspaper and makes for an interesting read."
     ></portfolio-project>
+
+    <section class="text-container">
+    <portfolio-text
+      content="I am open to commissions.
+Be it a visual identity, website, book, app, big or small project, I can help you.
+Have a look at my work and please do not hesitate to contact me. :-)
+"></portfolio-text>
+
+  </section>
+
+
+
     </template>
 
   <script>
@@ -83,12 +177,14 @@
       is: 'andreavendrik-website',
 
       properties: {
-        prop1: {
-          type: String,
-          value: 'andreavendrik-website',
-        },
+        hideMore: {
+          type: Boolean,
+          value: true,
+        }
       },
-
+      toggleMore:function() {
+        this.hideMore = !this.hideMore
+      }
     });
   </script>
 </dom-module>
