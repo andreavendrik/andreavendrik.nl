@@ -136,6 +136,15 @@
         line-height:24px;
         padding:30px 20px;
       }
+      @media (max-width:700px) {
+        #description-block {
+          flex-direction:column;
+          position:relative;
+        }
+      }
+      #description-block p {
+        margin:4px 0px 16px 0px;
+      }
 
       .description-left {
         min-width:150px;
@@ -148,13 +157,22 @@
         flex:1;
         display:flex;
         flex-direction: column;
-        min-width:450px;
         max-width:650px;
+      }
+      @media (max-width:700px) {
+        .description-text {
+          max-width:100%;
+        }
       }
 
       .description-text {
         column-count:2;
         column-gap:30px;
+      }
+      @media (max-width:700px) {
+        .description-text {
+          column-count:1;
+        }
       }
 
       #description-block[hidden] {
@@ -182,7 +200,7 @@
         <button id="show-description" on-tap="toggleDescription">about project</button>
       </div>
 
-        <div id="description-block" hidden$="[[hideDescription]]">
+      <div id="description-block" hidden$="[[hideDescription]]">
 
         <div class="description-left">
           <h3 class="description-heading">what</h3>
