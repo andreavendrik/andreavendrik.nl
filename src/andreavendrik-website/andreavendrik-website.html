@@ -33,12 +33,33 @@
         margin:0px;
       }
 
+      a {
+        color:#FF001F;
+      }
+
+      a:hover {
+        color:#FF9B9B;
+      }
+
       #intro {
         height:85vh;
         background-color: #00D4FF;
         display:flex;
         flex-direction: column;
         justify-content: center;
+      }
+
+      .text-container {
+        max-width:900px;
+        margin:auto;
+        padding:100px 30px;
+        box-sizing:border-box;
+      }
+      .text-container p {
+        font-family:'Work Sans', sans-serif;
+        font-size:35px;
+        line-height:48px;
+        font-weight: 400;
       }
 
       #menu {
@@ -62,11 +83,16 @@
         margin:0px 60px 0px 0px;
       }
 
+      portfolio-project {
+        width:100%;
+      }
+
       #hire-me {
         background-color: transparent;
         border: 1px solid black;
         display: inline-block;
         padding: 12px 12px;
+        font-family:'Work Sans';
         font-size:16px;
         width:100px;
         height:50px;
@@ -80,14 +106,6 @@
 
       #andrea {
         font-weight:600;
-      }
-
-      .text-container {
-        max-width:100%;
-        padding:100px 80px;
-        box-sizing:border-box;
-        display:flex;
-        flex-direction: column;
       }
 
       #show-more {
@@ -108,6 +126,16 @@
         transition: 0.3s;
       }
 
+      #contact-information {
+        display:flex;
+        max-width:850px;
+      }
+
+      #contact-information div {
+        flex:1;
+        margin-right:20px;
+      }
+
     </style>
 
     <section id="menu">
@@ -122,21 +150,24 @@
       </div>
     </section>
 
-    <section class="text-container" id="intro">
+    <section id="intro">
+      <div class="text-container">
 
-      <h2>Oh, hello. You look mighty nice today! 😏<br>
-      Anyway, allow me to introduce myself:</h2>
+        <h2>Oh, hello. You look mighty nice today! 😏<br>
+        Anyway, allow me to introduce myself:</h2>
 
-      <h1>My name is Andrea Vendrik.<br>
-      I am a graphic designer based in Amsterdam.</h1>
+        <h1>My name is Andrea Vendrik.<br>
+        I am a graphic designer based in Amsterdam.</h1>
+      </div>
 
     </section>
 
     <section class="text-container">
-      <portfolio-text
-        content="As a designer I love me some variety. Websites, books, apps, logos, posters… my portfolio is wildly diverse.
+        <p>As a designer I love me some variety. Websites, books, apps, logos, posters… my portfolio is wildly diverse.</p>
 
-        I spend most of my time designing. Therefore you will find both commissioned and autonomous projects. With a background in social sciences, I have a special interest in socially relevant projects."></portfolio-text>
+        <p>
+          I spend most of my time designing. Therefore you will find both commissioned and autonomous projects. With a background in social sciences, I have a special interest in socially relevant projects.
+        </p>
 
         <button id="show-more" on-tap="toggleMore">more about me</button>
 
@@ -159,11 +190,21 @@
     ></portfolio-project>
 
     <section class="text-container">
-    <portfolio-text
-      content="I am open to commissions.
-Be it a visual identity, website, book, app, big or small project, I can help you.
-Have a look at my work and please do not hesitate to contact me. :-)
-"></portfolio-text>
+      <p>
+        I am open to commissions.<br>
+        Be it a visual identity, website, book, app, big or small project, I can help you.
+        Have a look at my work and please do not hesitate to contact me. :-)
+      </p>
+      <div id="contact-information">
+        <div>
+          <h3>typed messages</h3>
+          <p><a href="mailto:info@andreavendrik.nl">info@andreavendrik.nl</a></p>
+        </div>
+        <div>
+          <h3>verbal messages</h3>
+          <p>+31 6 381 99 563</p>
+        </div>
+      </div>
 
   </section>
 
