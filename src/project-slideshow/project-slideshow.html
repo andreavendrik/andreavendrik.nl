@@ -1,0 +1,79 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<dom-module id="project-slideshow">
+
+  <template>
+
+    <style>
+      .carousel-inner {
+        height:100%;
+      }
+    </style>
+
+      <div id$="[[myCarouselId]]" class="carousel slide" data-ride="carousel" data-interval="false">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+
+          <template is="dom-repeat" items="[[images]]">
+            <li
+              data-target$="#[[myCarouselId]]"
+              data-slide-to="[[index]]"
+              class$="[[_getSlideClass(index)]]"
+            ></li>
+          </template>
+
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+
+          <template is="dom-repeat" items="[[images]]">
+
+            <div class$="item [[_getSlideClass(index)]]">
+              <img
+                src$="[[resolveUrl(item)]]"
+                data-target$="#[[myCarouselId]]"
+                role="button"
+                data-slide-to$="[[_getNextSlide(index, images)]]"
+              >
+            </div>
+
+
+          </template>
+
+        </div>
+      </div>
+
+    </body>
+    </html>
+
+
+    </div>
+
+  </template>
+
+  <script>
+  Polymer({
+    is: 'project-slideshow',
+    properties: {
+      images: Array,
+      myCarouselId: String,
+    },
+
+    _getSlideClass: function(i) {
+      if(i == 0) return "active";
+      return "";
+    },
+
+    _getNextSlide: function(index, images) {
+      if(index == images.length -1) return 0;
+      return (index+1);
+    }
+  });
+  </script>
+
+</dom-module>

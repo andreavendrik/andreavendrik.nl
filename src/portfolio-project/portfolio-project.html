@@ -1,7 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link rel="import" href="../project-slideshow/project-slideshow.html">
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-<script type="text/javascript" src="test.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <dom-module id="portfolio-project">
 
   <template>
@@ -80,7 +81,7 @@
         position:absolute;
         left:30px;
         bottom:100px;
-        max-width:360px;
+        max-width:380px;
       }
       .title-block h1 {
         margin-top:10px;
@@ -129,6 +130,7 @@
         width:15px;
         height:15px;
         padding-left:10px;
+        box-sizing:content-box;
       }
       #show-description:hover {
         background-color:white;
@@ -214,8 +216,12 @@
 
     <section class="project-container">
 
+
       <figure>
-        <img src$="[[resolveUrl(image)]]">
+        <project-slideshow
+        my-carousel-id="[[myCarouselId]]"
+        images="[[slideshowImages]]">
+        </project-slideshow>
       </figure>
 
       <div class="title-block">
@@ -257,6 +263,8 @@
       containerColor: String,
       descriptionWhat: String,
       descriptionFor: String,
+      slideshowImages: Array,
+      myCarouselId: String,
       hideDescription: {
         type: Boolean,
         value: true,
