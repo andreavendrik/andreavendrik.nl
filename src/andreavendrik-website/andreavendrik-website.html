@@ -54,11 +54,11 @@
 
       a {
         color:#E7001C;
+        text-decoration: underline;
       }
 
       a:hover {
-        color:#FF9B9B
-        ;
+        color:#FF9B9B;
       }
 
       #intro {
@@ -169,6 +169,37 @@
         }
       }
 
+      .section-heading {
+          text-align:left;
+          margin:0px;
+          padding:10px 50px 0px;
+          background-color: transparent;
+          font-family:'Work Sans';
+          font-size:16px;
+          font-weight:600;
+      }
+      @media (max-width:700px) {
+        .section-heading {
+          padding:10px 25px;
+        }
+      }
+      .section-heading img {
+        width:15px;
+        height:15px;
+        margin-left:10px;
+      }
+      .section-heading p {
+          margin-bottom:0px;
+      }
+      .section-heading hr {
+        margin:5px 0px 0px 0px;
+        border:none;
+        width:100px;
+        height:2px;
+        background-color:rgba(0,0,0,0.9);
+        color:rgba(0,0,0,0.9);
+      }
+
       #menu {
         position:fixed;
         background-color: white;
@@ -276,12 +307,14 @@
         display:flex;
         align-items:center;
         justify-content: center;
+        margin-top:25px;
       }
       .button-body img {
         width:15px;
         height:15px;
         padding-left:10px;
         margin-right:0px!important;
+        box-sizing:content-box;
       }
       .button-body:hover {
         background-color:#FFBAC3;
@@ -364,6 +397,15 @@
         font-weight:600;
       }
 
+      #work {
+        background-color: #7986CB;
+      }
+      @media (max-width:700px) {
+        #work {
+          background-color: #b0b9e5;
+        }
+      }
+
     </style>
 
 <!-- Menu -->
@@ -375,7 +417,7 @@
       </div>
       <div class="menu-element" id="menu-right">
         <a href="#about"><h3>about</h3></a>
-        <a href="#project-ps"><h3>work</h3></a>
+        <a href="#work"><h3>work</h3></a>
         <a href="#hire-me"><button class="button">hire me!</button></a>
       </div>
       <div class="menu-mobile-button">
@@ -407,8 +449,17 @@
 
 <!-- About me introduction -->
 
-    <section id="about" class="text-container">
-        <p>Some things before we move on to my work: I love me some variety. Websites, books, apps, logos, posters… <span id="about-me-emphasis">my portfolio is wildly diverse</span>. Pigeonholing will be hard.</p>
+    <div class="section-heading" id="about">
+      <p>
+        about me.
+      </p>
+    </div>
+
+
+    <section class="text-container">
+        <p>
+          Some things before we move on to my work: I love me some variety. Websites, books, apps, logos, posters… <span id="about-me-emphasis">my portfolio is wildly diverse</span>. Pigeonholing will be hard.
+        </p>
 
         <p>
           Also, I spend a lot of time designing. Therefore you will run across <span id="about-me-emphasis">both commissioned and autonomous projects</span>. And with a background in social sciences, I have a special interest in <span id="about-me-emphasis">socially relevant projects</span>. Enjoy!
@@ -421,7 +472,7 @@
 
 <!-- About me unfold -->
 
-    <div id="more-about-me" hidden$="[[hideMore]]">
+    <section id="more-about-me" hidden$="[[hideMore]]">
       <div>
         <img src="../portfolio-project/images/about.png">
       <p>
@@ -438,205 +489,221 @@
         </p>
 
       </div>
-    </div>
+    </section>
 
 
 <!-- Portfolio projects -->
 
+    <section>
 
-    <portfolio-project id="project-ps"
-    my-carousel-id="myCarousel-13"
-    slideshow-images='["../portfolio-project/images/Post_Supply/postsupply-desktop.gif", "../portfolio-project/images/Post_Supply/postsupply-mobile.gif", "../portfolio-project/images/Post_Supply/postsupply.png"]'
-    title="Post Press"
-    title-description="website design & illustrations"
-    description-what="website & illustrations"
-    description-for="Post Press, a product by New Atoms">
-    Post Press is a service that offers an editorial team to businesses for creating blog and social media posts. I was responsible for the product landing page, identity and illustrations.
-    </portfolio-project>
+      <div class="section-heading" id="work">
+        <p>
+          work.
+        </p>
+      </div>
 
-    <portfolio-project id="project-ts"
-    my-carousel-id="12"
-    slideshow-images='["../portfolio-project/images/True_Story/ts_01.png", "../portfolio-project/images/True_Story/ts_02.png", "../portfolio-project/images/True_Story/ts_03.png",
-    "../portfolio-project/images/True_Story/ts_04.jpg", "../portfolio-project/images/True_Story/ts_05.jpg", "../portfolio-project/images/True_Story/ts_06.jpg"]'
-    title="True Story?"
-    title-description="app & visual identity design"
-    description-what="app"
-    description-for="graduation project about news framing">
-    True Story? was my graduation project at the Master Graphic Design, AKV St. Joost.<br><br>
+          <portfolio-project id="project-ps"
+          my-carousel-id="myCarousel-13"
+          slideshow-images='["../portfolio-project/images/Post_Supply/postsupply-desktop.gif", "../portfolio-project/images/Post_Supply/postsupply-mobile.gif", "../portfolio-project/images/Post_Supply/postsupply.png"]'
+          title="Post Press"
+          title-description="website design & illustrations"
+          description-what="website & illustrations"
+          description-for="Post Press, a product by New Atoms">
+          <a href="http://www.post.press" target="_blank">Post Press</a> is a service that offers an editorial team to businesses for creating blog and social media posts. In collaboration with the team I designed and programmed the product landing page, and created the identity and illustrations.<br>
+          Some illustrations/icons were based on illustrations found on the Noun project. Credits go to <a href="https://thenounproject.com/Nozzman/" target="_blank">Bram van Rijen</a> (single Twitterbird), <a href="https://thenounproject.com/thijsrentier" target="_blank">Thijs Rentier</a> (icon with flag on mountain) and <a href="https://thenounproject.com/leemette" target="_blank">Lee mette</a> (paper plane).
+          </portfolio-project>
 
-    Following the What Where Whom How Who project I developed a more ambitious project originating from the same trail of thought: a journalists’ job is riddled with making choices. One event can be retold in millions of ways. Is there one valid version, or an endless parade of subjective ones? Or, using the title of this project: is there such a thing as a True Story?<br><br>
+          <portfolio-project id="project-ts"
+          my-carousel-id="12"
+          slideshow-images='["../portfolio-project/images/True_Story/ts_00.jpg",
+          "../portfolio-project/images/True_Story/ts_01.png",
+          "../portfolio-project/images/True_Story/ts_02.png", "../portfolio-project/images/True_Story/ts_03.png",
+          "../portfolio-project/images/True_Story/ts_04.jpg", "../portfolio-project/images/True_Story/ts_05.jpg", "../portfolio-project/images/True_Story/ts_06.jpg"]'
+          title="True Story?"
+          title-description="app & visual identity design"
+          description-what="app"
+          description-for="graduation project Master of Graphic Design, AKV St. Joost">
+          Following the What Where Whom How Who project I developed a more ambitious project originating from the same trail of thought: a journalists’ job is riddled with making choices. One event can be retold in millions of ways. Is there one valid version, or an endless parade of subjective ones? Or, using the title of this project: is there such a thing as a True Story?<br><br>
 
-    I developed a prototype for an app that raises these questions, by showing the user a different news headline on the same event with each swipe. The app generates these automatically, drawing from a large collection of words and images found to describe this event in different news media. Users can read the headline as a whole, or cut it up in its original segments. They can manipulate the headlines by swapping segments, view extensive source information, read the original news articles and filter the headlines based on newspaper and date.<br><br>
+          I developed a prototype for an app that raises these questions, by showing the user a different news headline on the same event with each swipe. The app generates these automatically, drawing from a large collection of words and images found to describe this event in different news media. Users can read the headline as a whole, or cut it up in its original segments. They can manipulate the headlines by swapping segments, view extensive source information, read the original news articles and filter the headlines based on newspaper and date.<br><br>
 
-    The app contained 5 news cases that were reported on extensively: the Teeven deal scandal, the death of Boris Nemtsov, the news hijack by Tarik Z, the disputed salary raise at ABN Amro and the political decision regarding refugees referred to as "bed, bath, bread" . In theory, the app would be updated weekly with a new recent case, making it an alternative news platform.<br><br>
+          The app contained 5 news cases that were reported on extensively. In theory, the app would be updated weekly with a new recent case, making it an alternative news platform.<br><br>
 
-    The exhibition took place in MOTI (Museum Of The Image) from July until September 2015. Visitors could try out a prototype of the app. On display were different headlines from three cases, which could also be taken as postcards.<br><br>
+          The exhibition took place in MOTI (Museum Of The Image) from July until September 2015. Visitors could try out a prototype of the app. On display were different headlines from three cases, which could also be taken as postcards.
+          </portfolio-project>
 
-    This project is still in development, and I intend to take it further in the future.
-    </portfolio-project>
+          <portfolio-project id="project-wykygo"
+          my-carousel-id="myCarousel-11"
+          slideshow-images='["../portfolio-project/images/DWJDJOW/dwjdjow.gif"]'
+          title="Getting old"
+          title-description="illustration"
+          description-what="illustration series"
+          description-for="autonomous project about getting older">
 
-    <portfolio-project id="project-wykygo"
-    my-carousel-id="myCarousel-11"
-    slideshow-images='["../portfolio-project/images/DWJDJOW/dwjdjow.gif"]'
-    title="Getting old"
-    title-description="illustration"
-    description-what="illustration series"
-    description-for="autonomous project about getting older">
+          Ever since I passed early adulthood I have amused myself collecting the little, yet unmistakable clues in life that tell me I am getting older. Such as owning proper rain attire, successfully caring for my plants, and not understanding why people use Snapchat. I kept a list on my computer, and as it was growing, I thought it would be a great source for an illustration series. I created a typeface to accompany the illustrations. The texts are in Dutch.<br><br>
+          View the full series on <a href="http://danweetjedatjeoudwordt.tumblr.com/" target="_blank">this blog</a>.<br><br>
 
-    Ever since I passed early adulthood I have amused myself collecting the little, yet unmistakable clues in life that tell me I am getting older. Such as owning proper rain attire, successfully caring for my plants, and not understanding why people use Snapchat. I kept a list on my computer, and as it was growing, I thought it would be a great source for an illustration series. I created a typeface to accompany the illustrations. The texts are in Dutch.<br><br>
-        View the full series on this blog.<br><br>
+          Featured on <a href="http://www.vormplatform.nl/submission/dan-weet-oud-wordt/" target="_blank">Vormplatform</a> and <a href="http://www.underconsideration.com/quipsologies/archives/august_2016/arminvit_75.php" target="_blank">Quipsologies</a>.
+          </portfolio-project>
 
-    Featured on Vormplatform and Quipsologies.
-    </portfolio-project>
+          <portfolio-project id="project-wwwhw"
+          my-carousel-id="myCarousel-10"
+          slideshow-images='["../portfolio-project/images/WWWHW/WWWHW_01.jpg",
+          "../portfolio-project/images/WWWHW/WWWHW_02.jpg",
+          "../portfolio-project/images/WWWHW/WWWHW_03.jpg",
+          "../portfolio-project/images/WWWHW/WWWHW_04.jpg",
+          "../portfolio-project/images/WWWHW/WWWHW_05.jpg",
+          "../portfolio-project/images/WWWHW/WWWHW_06.jpg", "../portfolio-project/images/WWWHW/WWWHW_07.jpg"]'
 
-    <portfolio-project id="project-wwwhw"
-    my-carousel-id="myCarousel-10"
-    slideshow-images='["../portfolio-project/images/WWWHW/WWWHW_01.jpg",
-    "../portfolio-project/images/WWWHW/WWWHW_02.jpg",
-    "../portfolio-project/images/WWWHW/WWWHW_03.jpg",
-    "../portfolio-project/images/WWWHW/WWWHW_04.jpg",
-    "../portfolio-project/images/WWWHW/WWWHW_05.jpg",
-    "../portfolio-project/images/WWWHW/WWWHW_06.jpg", "../portfolio-project/images/WWWHW/WWWHW_07.jpg"]'
+          title="What Where Whom How Who"
+          title-description="book design"
+          description-what="book"
+          description-for="autonomous project about the death of Michael Brown">
+          On August 9, 2014 in Ferguson, Missouri, Michael Brown was shot by police officer Darren Wilson. As Michael Brown was African American, it was placed in line with other recent cases of police violence against black people. Being the final straw for many, it caused great outrage across the entire country.<br><br>
 
-    title="What Where Whom How Who"
-    title-description="book design"
-    description-what="book"
-    description-for="autonomous project about the death of Michael Brown">
-    On August 9, 2014 in Ferguson, Missouri, Michael Brown was shot by police officer Darren Wilson. As Michael Brown was African American, it was placed in line with other recent cases of police violence against black people. Being the final straw for many, it caused great outrage across the entire country. Coverage and talk about what happened straightway exploded on Twitter under hashtags such as #Ferguson, #IAmMikeBrown and later #HandsUpDontShoot. Coverage by mainstream broadcasting channels and newspapers caught up a little later.<br><br>
+          When an event like this happens all involved parties, news media and others concerned try to make sense of it all within a heartbeat. Guided by different understandings and interests, the event is perceived and retold in many different ways. With Ferguson it was no different.<br><br>
 
-    When an event like this happens all involved parties, news media and others concerned try to make sense of it all within a heartbeat. Guided by different understandings and interests, the event is perceived and retold in many different ways. With Ferguson it was no different. I started collecting the words that were used in different American news sources and on Twitter to fill in the different key elements of the story: the what (e.g. ‘incident’; ‘shooting’; ‘murder’), the where (e.g. ‘Ferguson’, ‘Missouri’, ‘black town with white police force’), the who (e.g. ‘man’, ‘kid’, ‘high school graduate’), the how (e.g. ‘shot’, ‘executed’, ‘wrongfully killed’), and by who (e.g. ‘police officer’, ‘law enforcement’, ‘six year veteran’). I assembled all of these words in five booklets. Together, they make up the full account of what happened in Ferguson. Every time you turn a page, a different version is created.<br><br>
+          I started collecting the words that were used in different American news sources and on Twitter to fill in the different key elements of the story: the what (e.g. ‘incident’; ‘murder’), the where (e.g. ‘Ferguson’, ‘black town with white police force’), the who (e.g. ‘man’, ‘high school graduate’), the how (e.g. ‘shot’, ‘executed’), and by who (e.g. ‘police officer’, ‘six year veteran’). I assembled all of these words in five booklets. Together, they make up the full account of what happened in Ferguson. Every time you turn a page, a different version is created.<br><br>
 
-    ‘What, Where, Who, How, Whom?’ shows how one event can be reported in millions of ways. It forms the precursor of another project called ‘True Story?’
-    </portfolio-project>
+          ‘What, Where, Who, How, Whom?’ shows how one event can be reported in millions of ways.
+          </portfolio-project>
 
-    <portfolio-project id="project-shmg"
-    my-carousel-id="myCarousel-9"
-    slideshow-images='["../portfolio-project/images/SHMG/SHMG.jpg"]'
-    title="So help me God"
-    title-description="poster design"
-    description-what="poster, DVD sleeve and film titling"
-    description-for="So Help Me God, a documentary by Thomas Vroege">
-    So Help Me God is the name of a documentary filmed and directed by Thomas Vroege. I was asked to create the graphic identity: poster, film titles and DVD design. Watching So Help Me God feels like being the audience of a well rehearsed play. It takes us on a visual journey through the financial world in the City, London, with its residents mostly distant and estranging but at times oddly close and human.
-    </portfolio-project>
+          <portfolio-project id="project-shmg"
+          my-carousel-id="myCarousel-9"
+          slideshow-images='["../portfolio-project/images/SHMG/SHMG.jpg"]'
+          title="So help me God"
+          title-description="poster design"
+          description-what="poster, DVD sleeve and film titling"
+          description-for="So Help Me God, a documentary by Thomas Vroege">
+          So Help Me God is the name of a documentary filmed and directed by Thomas Vroege. I was asked to create the graphic identity: poster, film titles and DVD design. Watching So Help Me God feels like being the audience of a well rehearsed play. It takes us on a visual journey through the financial world in the City, London, with its residents mostly distant and estranging but at times oddly close and human.
+          </portfolio-project>
 
-    <portfolio-project id="project-op"
-    my-carousel-id="myCarousel-8"
-    slideshow-images='["../portfolio-project/images/Oil_and_Paradise/OP_1.jpg",
-    "../portfolio-project/images/Oil_and_Paradise/OP_2.jpg",
-    "../portfolio-project/images/Oil_and_Paradise/OP_3.jpg",
-    "../portfolio-project/images/Oil_and_Paradise/OP_4.jpg",
-    "../portfolio-project/images/Oil_and_Paradise/OP_5.jpg",
-    "../portfolio-project/images/Oil_and_Paradise/OP_6.jpg",
-    "../portfolio-project/images/Oil_and_Paradise/OP_7.jpg",
-    "../portfolio-project/images/Oil_and_Paradise/OP_8.jpg"]'
-    title="Oil & Paradise"
-    title-description="exhibition & book design"
-    description-what="exhibition and book"
-    description-for="Oil & Paradise, photography project and documentary by Ad Nuis">
-    Oil & Paradise, 10 trips to Azerbaijan is a project by photographer Ad Nuis. It consists of an audiovisual installation, accompanying exhibition at the Nederlands Fotomuseum (up in summer 2014), book app and print on demand photobook. Together with Jinyoung Kim and Alessandro Carosso I was asked to design and cooperate with Paradox in the editing of the exhibition and book.<br><br>
+          <portfolio-project id="project-op"
+          my-carousel-id="myCarousel-8"
+          slideshow-images='["../portfolio-project/images/Oil_and_Paradise/OP_1.jpg",
+          "../portfolio-project/images/Oil_and_Paradise/OP_2.jpg",
+          "../portfolio-project/images/Oil_and_Paradise/OP_3.jpg",
+          "../portfolio-project/images/Oil_and_Paradise/OP_4.jpg",
+          "../portfolio-project/images/Oil_and_Paradise/OP_5.jpg",
+          "../portfolio-project/images/Oil_and_Paradise/OP_6.jpg",
+          "../portfolio-project/images/Oil_and_Paradise/OP_7.jpg",
+          "../portfolio-project/images/Oil_and_Paradise/OP_8.jpg"]'
+          title="Oil & Paradise"
+          title-description="exhibition & book design"
+          description-what="exhibition and book"
+          description-for="Oil & Paradise, photography project and documentary by Ad Nuis">
+          Oil & Paradise, 10 trips to Azerbaijan is a project by photographer Ad Nuis. It consists of an audiovisual installation, accompanying exhibition at the Nederlands Fotomuseum (up in summer 2014), book app and print on demand photobook. Together with <a href="http://iamjykim.tumblr.com/" target="_blank">Jinyoung Kim</a> and <a href="http://www.alessandrocarosso.com/" target="_blank">Alessandro Carosso</a> I was asked to design and cooperate with <a href="http://www.paradox.nl/" target="_blank">Paradox</a> in the editing of the exhibition and book.<br><br>
 
-    When Ad Nuis turned fifty and took stock of his life and work, he saw that he had always focussed on the small things; the mundane. It was time for a new adventure. In a Tin Tin fashion, he went to discover a new world of money, power, women.<br><br>
+          When Ad Nuis turned fifty and took stock of his life and work, it was time for a new adventure. In a Tin Tin fashion, he went to discover a new world of money, power, women.<br>
 
-    Correspondingly, the book is humbly designed to give the feeling of a diary, a record of a personal journey. The exhibition leans more heavily on the destination: Azerbaijan. The drama of the gallons of oil, the absurt new wealth, the splendor, glamorized appearances and corruption are reflected in the design.<br><br>
+          Correspondingly, the book is humbly designed to give the feeling of a diary, a record of a personal journey. The exhibition leans more heavily on the destination: Azerbaijan. The drama of the gallons of oil, the absurt new wealth, the splendor, glamorized appearances and corruption are reflected in the design.<br><br>
 
-    The book is digitally available in the app store for €3,59 and as a Blurb print on demand book.<br><br>
+          The book is <a href="https://itunes.apple.com/nl/app/oil-paradise/id885792805?mt=8&uo=4">digitally available in the app store for €3,59</a> and as a <a href="http://ydocfoundation.org/oilandparadise/" target="_blank">Blurb print on demand book</a>.<br><br>
 
-    Exhibition photos by Alessandro Carosso. Book clip by Paradox.
-    </portfolio-project>
-
-
-    <portfolio-project id="project-nostalgia"
-    my-carousel-id="myCarousel-7"
-    slideshow-images='["../portfolio-project/images/Get_High_On_Nostalgia/get_high_on_nostalgia_1.jpg", "../portfolio-project/images/Get_High_On_Nostalgia/get_high_on_nostalgia_2.jpg",
-    "../portfolio-project/images/Get_High_On_Nostalgia/get_high_on_nostalgia_3.jpg"]'
-    title="Get high on the future"
-    title-description="poster design"
-    description-what="poster series"
-    description-for="autonomous project">
-    When the future doesn’t ooze with brightness, we tend to get nostalgic for the past. Embracing retro, figuratively turning the hourglass upside down, we escape from the present, pretending we are somewhere else. Some place familiar, rosy, nicer, where all troubles are absent and the world is nothing but bliss. Like drugging ourselves. But if we continue to shun from looking forward, nothing will ever happen. With these posters, I make a clear case: get high on the future, not on nostalgia.
-    </portfolio-project>
-
-    <portfolio-project id="project-vm"
-    my-carousel-id="myCarousel-6"
-    slideshow-images='["../portfolio-project/images/Vintage_Mapp/vm_01.png", "../portfolio-project/images/Vintage_Mapp/vm_02.png",
-    "../portfolio-project/images/Vintage_Mapp/vm_03.png"]'
-    title="Vintage Mapp"
-    title-description="visual identity & app design"
-    description-what="mobile application"
-    description-for="Vintage Mapp">
-
-    VintageMapp is a tool that provides vintage lovers with a complete guide to secondhand clothing and bric-a-brac in Amsterdam, by simply mapping all shops and markets in the area. I developed the complete identity, from logo and promotional materials to app design and website. Keywords are fresh, clean and a tinge of retro.
-    </portfolio-project>
+          Exhibition photos by <a href="http://www.alessandrocarosso.com/" target="_blank">Alessandro Carosso</a>. Book clip by <a href="http://www.paradox.nl/" target="_blank">Paradox</a>.
+          </portfolio-project>
 
 
-    <portfolio-project id="project-sm"
-    my-carousel-id="myCarousel-5"
-    slideshow-images='["../portfolio-project/images/Sociologisch_Mokum/sm_1.jpg", "../portfolio-project/images/Sociologisch_Mokum/sm_2.jpg",
-    "../portfolio-project/images/Sociologisch_Mokum/sm_3.jpg",
-    "../portfolio-project/images/Sociologisch_Mokum/sm_4.jpg",
-    "../portfolio-project/images/Sociologisch_Mokum/sm_5.jpg",
-    "../portfolio-project/images/Sociologisch_Mokum/sm_6.jpg"]'
-    title-description="editorial design"
-    description-what="magazine"
-    description-for="Sociologisch Mokum">
+          <portfolio-project id="project-nostalgia"
+          my-carousel-id="myCarousel-7"
+          slideshow-images='["../portfolio-project/images/Get_High_On_Nostalgia/get_high_on_nostalgia_1.jpg", "../portfolio-project/images/Get_High_On_Nostalgia/get_high_on_nostalgia_2.jpg",
+          "../portfolio-project/images/Get_High_On_Nostalgia/get_high_on_nostalgia_3.jpg"]'
+          title="Get high on the future"
+          title-description="poster design"
+          description-what="poster series"
+          description-for="autonomous project">
+          When the future doesn’t ooze with brightness, we tend to get nostalgic for the past. Embracing retro, figuratively turning the hourglass upside down, we escape from the present, pretending we are somewhere else. Some place familiar, rosy, nicer, where all troubles are absent and the world is nothing but bliss. Like drugging ourselves. But if we continue to shun from looking forward, nothing will ever happen. With these posters, I make a clear case: get high on the future, not on nostalgia.
+          </portfolio-project>
 
-    SoMo (Sociologisch Mokum – Sociological Mokum) is the magazine of the study Sociology at the University of Amsterdam. It mostly serves as a testlab for aspiring ‘sociological’ writers, scientists, photographers and other enthusiasts, as students voluntarily bring in all content and imagery. The budget is limited – only the cover is printed in colour.<br><br>
+          <portfolio-project id="project-vm"
+          my-carousel-id="myCarousel-6"
+          slideshow-images='["../portfolio-project/images/Vintage_Mapp/vm_01.png", "../portfolio-project/images/Vintage_Mapp/vm_02.png",
+          "../portfolio-project/images/Vintage_Mapp/vm_03.png"]'
+          title="Vintage Mapp"
+          title-description="visual identity & app design"
+          description-what="mobile application"
+          description-for="Vintage Mapp">
 
-    In the fall of 2011, I got the challenging job to transform this mishmash of content into an attractive, friendly, and most of all accessible magazine. I redesigned SoMo from the ground up and took care of it for two volumes. I also contributed to cover and photography concepts.
-    </portfolio-project>
-
-
-    <portfolio-project id="project-zz"
-    my-carousel-id="myCarousel-4"
-    slideshow-images='["../portfolio-project/images/Zeeziek/zz_01.gif", "../portfolio-project/images/Zeeziek/zz_02.jpg",
-    "../portfolio-project/images/Zeeziek/zz_03.jpg",
-    "../portfolio-project/images/Zeeziek/zz_04.jpg"]'
-    title="Zeeziek in het Rijks"
-    title-description="postcard design"
-    description-what="series of postcards"
-    description-for="autonomous work for Rijksmuseum">
-
-    The Rijksmuseum in Amsterdam was reopened in spring of 2013. Alongside a new project was launched: the Rijksstudio, an open online database of 125.000 artworks the museum owns. It enables visitors to download these century-old masterpieces and invites them to use the works for something new. And so I did. During a visit to the museum, the paintings of the sea by the old Dutch masters fascinated me. The sea can be deceivingly calm or terribly wild. It liberates or swallows you, comforts or griefs you, is a friend or a foe. I sought to create something that would express this manifold split personality in all its beauty and be a souvenir of my experience at the museum. I decided on a little booklet of souvenir postcards, titled Zeeziek in het Rijks (Seasick at the Rijks).
-    </portfolio-project>
+          VintageMapp is a tool that provides vintage lovers with a complete guide to secondhand clothing and bric-a-brac in Amsterdam, by simply mapping all shops and markets in the area. I developed the complete identity, from logo and promotional materials to app design and website. Keywords are fresh, clean and a tinge of retro.
+          </portfolio-project>
 
 
-    <portfolio-project id="project-tt"
-    my-carousel-id="myCarousel-3"
-    slideshow-images='["../portfolio-project/images/Topsy_Turvy/TT_01.jpg",  "../portfolio-project/images/Topsy_Turvy/TT_02.jpg"]'
-    title="Topsy Turvy"
-    title-description="poster design"
-    description-what="two posters"
-    description-for="autonomous work for the Topsy Turvy exhibition">
+          <portfolio-project id="project-sm"
+          my-carousel-id="myCarousel-5"
+          slideshow-images='["../portfolio-project/images/Sociologisch_Mokum/sm_1.jpg", "../portfolio-project/images/Sociologisch_Mokum/sm_2.jpg",
+          "../portfolio-project/images/Sociologisch_Mokum/sm_3.jpg",
+          "../portfolio-project/images/Sociologisch_Mokum/sm_4.jpg",
+          "../portfolio-project/images/Sociologisch_Mokum/sm_5.jpg",
+          "../portfolio-project/images/Sociologisch_Mokum/sm_6.jpg"]'
+          title="Sociologisch Mokum"
+          title-description="editorial design"
+          description-what="magazine"
+          description-for="Sociologisch Mokum">
 
-    Topsy Turvy was the title of an exhibition in de Appel arts centre in Amsterdam. It was based on the carnival festival, a holiday of exuberant celebration during which the world is turned upside down (the literal translation of Topsy Turvy). I designed two announcement posters. The common grey world gets fragmented into a chaotic mosaic of a thousand brightly coloured pieces.
-    </portfolio-project>
+          SoMo (Sociologisch Mokum – Sociological Mokum) is the magazine of the study Sociology at the University of Amsterdam. It mostly serves as a testlab for aspiring ‘sociological’ writers, scientists, photographers and other enthusiasts, as students voluntarily bring in all content and imagery. The budget is limited – only the cover is printed in colour.<br><br>
+
+          In the fall of 2011, I got the challenging job to transform this mishmash of content into an attractive, friendly, and most of all accessible magazine. I redesigned SoMo from the ground up and took care of it for two volumes. I also contributed to cover and photography concepts.
+          </portfolio-project>
 
 
-    <portfolio-project id="project-mb"
-    my-carousel-id="myCarousel-2"
-    slideshow-images='["../portfolio-project/images/Multoblaadjes/mb_01.jpg", "../portfolio-project/images/Multoblaadjes/mb_02.jpg", "../portfolio-project/images/Multoblaadjes/mb_03.jpg"]'
-    title="Multoblaadjes"
-    title-description="book design"
-    description-what="two books"
-    description-for="University of Amsterdam">
-    Multoblaadjes is a collection of columns by university lecturer Bart van Heerikhuizen, on the occasion of his retirement. Multoblaadjes are binder sheets, which van Heerikhuizen used to scribble down his thoughts. These notes formed the starting point of every piece he wrote. I designed the book and came up with a cover concept in collaboration with photographer Elske Verdoorn. We decided to illustrate the process of organizing and reorganizing thoughts and ideas to a single coherent writing piece in a playful way.<br><br>
-    Alongside this a liber amicorum was made, which was designed to subtly act as a little brother to Multoblaadjes. Cover photography by Eva van Barneveld.
-    </portfolio-project>
+          <portfolio-project id="project-zz"
+          my-carousel-id="myCarousel-4"
+          slideshow-images='["../portfolio-project/images/Zeeziek/zz_01.gif", "../portfolio-project/images/Zeeziek/zz_02.jpg",
+          "../portfolio-project/images/Zeeziek/zz_03.jpg",
+          "../portfolio-project/images/Zeeziek/zz_04.jpg"]'
+          title="Zeeziek in het Rijks"
+          title-description="postcard design"
+          description-what="series of postcards"
+          description-for="autonomous work for Rijksmuseum">
 
-    <portfolio-project id="project-bg"
-    my-carousel-id="myCarousel-1"
-    slideshow-images='["../portfolio-project/images/Bericht_Gemist/bg_01.gif", "../portfolio-project/images/Bericht_Gemist/bg_02.jpg", "../portfolio-project/images/Bericht_Gemist/bg_03.jpg"]'
-    title="Bericht Gemist"
-    title-description="newspaper design"
-    description-what="alternative newspaper"
-    description-for="autonomous project">
-    B:g (bericht: gemist, message: missed) is the title of an imaginary newspaper supplement. The content is made up of ‘messages’ that have each been put together by crossing out words from a randomly selected newspaper article, until a single sentence remains. These sentences make up little stories which all share an element of humour, surprise or lunacy.<br>
+          The Rijksmuseum in Amsterdam was reopened in spring of 2013. Alongside a new project was launched: the Rijksstudio, an open online database of 125.000 artworks the museum owns. It enables visitors to download these century-old masterpieces and invites them to use the works for something new. And so I did. During a visit to the museum, the paintings of the sea by the old Dutch masters fascinated me. The sea can be deceivingly calm or terribly wild. It liberates or swallows you, comforts or griefs you, is a friend or a foe. I sought to create something that would express this manifold split personality in all its beauty and be a souvenir of my experience at the museum. I decided on a little booklet of souvenir postcards, titled Zeeziek in het Rijks (Seasick at the Rijks).
+          </portfolio-project>
 
-    The title ‘message: missed’ refers to the reader having failed to discover these messages in the original news articles, while they were certainly worth reading. B:g breaks away from the usually crammed ordinary newspaper and makes for an interesting read."
-    </portfolio-project>
 
+          <portfolio-project id="project-tt"
+          my-carousel-id="myCarousel-3"
+          slideshow-images='["../portfolio-project/images/Topsy_Turvy/TT_01.jpg",  "../portfolio-project/images/Topsy_Turvy/TT_02.jpg"]'
+          title="Topsy Turvy"
+          title-description="poster design"
+          description-what="two posters"
+          description-for="autonomous work for the Topsy Turvy exhibition">
+
+          Topsy Turvy was the title of an exhibition in de Appel arts centre in Amsterdam. It was based on the carnival festival, a holiday of exuberant celebration during which the world is turned upside down (the literal translation of Topsy Turvy). I designed two announcement posters. The common grey world gets fragmented into a chaotic mosaic of a thousand brightly coloured pieces.
+          </portfolio-project>
+
+
+          <portfolio-project id="project-mb"
+          my-carousel-id="myCarousel-2"
+          slideshow-images='["../portfolio-project/images/Multoblaadjes/mb_01.jpg", "../portfolio-project/images/Multoblaadjes/mb_02.jpg", "../portfolio-project/images/Multoblaadjes/mb_03.jpg"]'
+          title="Multoblaadjes"
+          title-description="book design"
+          description-what="two books"
+          description-for="University of Amsterdam">
+          Multoblaadjes is a collection of columns by university lecturer Bart van Heerikhuizen, on the occasion of his retirement. Multoblaadjes are binder sheets, which van Heerikhuizen used to scribble down his thoughts. These notes formed the starting point of every piece he wrote. I designed the book and came up with a cover concept in collaboration with photographer Elske Verdoorn. We decided to illustrate the process of organizing and reorganizing thoughts and ideas to a single coherent writing piece in a playful way.<br><br>
+          Alongside this a liber amicorum was made, which was designed to subtly act as a little brother to Multoblaadjes. Cover photography by Eva van Barneveld.
+          </portfolio-project>
+
+          <portfolio-project id="project-bg"
+          my-carousel-id="myCarousel-1"
+          slideshow-images='["../portfolio-project/images/Bericht_Gemist/bg_01.gif", "../portfolio-project/images/Bericht_Gemist/bg_02.jpg", "../portfolio-project/images/Bericht_Gemist/bg_03.jpg"]'
+          title="Bericht Gemist"
+          title-description="newspaper design"
+          description-what="alternative newspaper"
+          description-for="autonomous project">
+          B:g (bericht: gemist, message: missed) is the title of an imaginary newspaper supplement. The content is made up of ‘messages’ that have each been put together by crossing out words from a randomly selected newspaper article, until a single sentence remains. These sentences make up little stories which all share an element of humour, surprise or lunacy.<br>
+
+          The title ‘message: missed’ refers to the reader having failed to discover these messages in the original news articles, while they were certainly worth reading. B:g breaks away from the usually crammed ordinary newspaper and makes for an interesting read."
+          </portfolio-project>
+    </section>
 
 <!-- Contact information -->
+
+    <div class="section-heading">
+      <p>
+        hire me!
+      </p>
+      <!-- <img src="../portfolio-project/images/icon-03.svg"> -->
+    </div>
 
     <section id="hire-me" class="text-container">
       <p>
