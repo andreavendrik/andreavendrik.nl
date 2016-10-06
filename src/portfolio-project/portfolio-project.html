@@ -72,16 +72,6 @@
         }
       }
 
-      .description-container {
-        background-color: transparent;
-      }
-        @media (max-width:700px) {
-          .description-container {
-            display:flex;
-            flex-direction:column;
-          }
-        }
-
       .title-block {
         background-color:white;
         opacity:0.9;
@@ -90,7 +80,7 @@
         position:absolute;
         left:30px;
         bottom:100px;
-        max-width:450px;
+        max-width:360px;
       }
       .title-block h1 {
         margin-top:10px;
@@ -140,7 +130,6 @@
         height:15px;
         padding-left:10px;
       }
-
       #show-description:hover {
         background-color:white;
         transition: 0.3s;
@@ -173,14 +162,21 @@
         margin:4px 0px 16px 0px;
       }
 
-      .description-left {
+      .description-details {
         min-width:150px;
         max-width:200px;
         flex:1;
         padding-right:30px;
       }
+      @media (max-width:700px) {
+        .description-details {
+          max-width:100%;
+          padding: auto;
+        }
+      }
 
-      .description-right {
+
+      .description-bodytext {
         flex:1;
         display:flex;
         flex-direction: column;
@@ -210,41 +206,43 @@
         width:100%;
       }
 
+      #description-container {
+        position:relative;
+      }
+
     </style>
 
-    <div class="project-container">
+    <section class="project-container">
 
       <figure>
         <img src$="[[resolveUrl(image)]]">
       </figure>
 
-      <div class="description-container">
-        <div class="title-block">
-          <h2>[[titleDescription]]</h2>
-          <h1>[[title]]</h1>
-        </div>
+      <div class="title-block">
+        <h2>[[titleDescription]]</h2>
+        <h1>[[title]]</h1>
+      </div>
+
+      <div id="description-container">
 
         <button id="show-description" on-tap="toggleDescription">about project<img src="../portfolio-project/images/icon-01.svg"></button>
-      </div>
 
-      <div id="description-block" hidden$="[[hideDescription]]">
-
-        <div class="description-left">
-          <h3 class="description-heading">what</h3>
-          <p class="description-shorts">[[descriptionWhat]]</p>
-
-          <h3 class="description-heading" id="description-heading-for">for</h3>
-          <p class="description-shorts">[[descriptionFor]]</p>
-        </div>
-
-        <div class="description-right">
-          <h3 class="description-heading">description</h3>
-          <p class="description-text"><content></content></p>
+        <div id="description-block" hidden$="[[hideDescription]]">
+          <div class="description-details">
+            <h3 class="description-heading">what</h3>
+            <p class="description-shorts">[[descriptionWhat]]</p>
+            <h3 class="description-heading" id="description-heading-for">for</h3>
+            <p class="description-shorts">[[descriptionFor]]</p>
+          </div>
+          <div class="description-bodytext">
+            <h3 class="description-heading">description</h3>
+            <p class="description-text"><content></content></p>
+          </div>
         </div>
 
       </div>
 
-    </div>
+    </section>
 
 
   </template>
