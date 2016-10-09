@@ -16,6 +16,18 @@
         display: block;
       }
 
+      img {
+        max-width:100%;
+        max-height:800px;
+        margin:auto;
+      }
+      @media (max-width: 1280px) {
+         img {
+          max-width:100%;
+          max-height:600px;
+        }
+      }
+
       :host:not([loaded]) img[hidden] {
         display: none;
       }
@@ -39,14 +51,14 @@
     is: 'portfolio-image',
 
     properties: {
-      
+
       url: String,
 
       src: {
         type: String,
         value: null
       },
-      
+
       scrollPosition: {
         type: Number,
         value: 0
@@ -86,13 +98,13 @@
       html = document.documentElement;
       r = this.parentElement.getBoundingClientRect();
 
-      var visible = ( !!r 
-        && r.bottom >= 0 
-        && r.right >= 0 
-        && r.top <= html.clientHeight 
-        && r.left <= html.clientWidth 
+      var visible = ( !!r
+        && r.bottom >= 0
+        && r.right >= 0
+        && r.top <= html.clientHeight
+        && r.left <= html.clientWidth
       );
-      
+
       return visible;
     },
 
