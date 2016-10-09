@@ -98,7 +98,7 @@
         padding:75px 50px;
         box-sizing:border-box;
       }
-      @media (max-width:700px) {
+      @media (max-width:800px) {
         .text-container {
           padding:50px 25px;
         }
@@ -126,29 +126,46 @@
         max-width:100%;
         background-color: #FFF2F3;
         margin-top:-75px;
-        padding:100px 0px;
+        padding:50px 0px;
         display:flex;
         flex-wrap:wrap;
         justify-content:center;
       }
+      @media (max-width:800px) {
+        #more-about-me {
+          margin-top:-50px;
+        }
+      }
       @media (max-width:700px) {
         #more-about-me {
-          padding:25px;
-          margin-top:-25px;
+          padding:50px 25px;
         }
       }
       #more-about-me div {
-        flex:display;
+        display:flex;
         flex-direction:column;
+      }
+      @media (max-width:900px) {
+        #more-about-me div {
+          padding:25px 150px 0px 150px;
+          width:100%;
+        }
+      }
+      @media (max-width:700px) {
+        #more-about-me div {
+          padding:25px 25px 0px 25px;
+          width:100%;
+        }
       }
       #more-about-me img {
         max-width:400px;
         margin-right:50px;
       }
-      @media (max-width:800px) {
+      @media (max-width:900px) {
         #more-about-me img {
           margin-right:0px;
           max-width:100%;
+          max-height:100%;
         }
       }
 
@@ -159,7 +176,7 @@
         font-size:20px;
         line-height:28px;
       }
-      @media (max-width:700px) {
+      @media (max-width:900px) {
         #more-about-me p {
           max-width:100%;
           font-family:'Work Sans', sans-serif, sans-serif;
@@ -173,7 +190,7 @@
       .section-heading {
           text-align:left;
           margin:0px;
-          padding:10px 50px 0px;
+          padding:10px 50px;
           background-color: transparent;
           font-family:'Work Sans', sans-serif;
           font-size:16px;
@@ -219,10 +236,9 @@
         width:100%;
         display:flex;
         padding:15px 50px;
-        z-index:25;
+        z-index:30;
         justify-content:space-between;
         align-items: center;
-        z-index:30;
 
       }
       @media (max-width:700px) {
@@ -245,9 +261,12 @@
         display:flex;
         align-items: center;
       }
-
       .menu-element h3 {
         margin:0px 60px 0px 0px;
+      }
+      #button-contact-me {
+        color: black;
+        border: 1px solid black;
       }
 
       .menu-mobile-button {
@@ -260,9 +279,10 @@
         background-color:#FFBAC3;
         transition: 0.2s;
         transform:rotate(0deg);
+        border: 1px solid black;
       }
       #button-mobile[hidden] {
-        background-color:white;
+        background-color:transparent;
       }
       #button-mobile[hidden] svg {
         transform:rotate(0deg);
@@ -287,7 +307,7 @@
         height:100vh;
         background-color: black;
         opacity:0.8;
-        z-index:25;
+        z-index:29;
         text-align:center;
         color:white;
         display:flex;
@@ -309,66 +329,78 @@
       }
 
       .button {
-        font-family:'Work Sans', sans-serif, sans-serif;
+        font-family:'Work Sans', sans-serif;
         background-color: transparent;
-        border: 1px solid black;
-        color: black;
+        border: 1px solid #E7001C;
+        color:#E7001C;
         display: inline-block;
-        padding: 12px 6px;
+        padding: 12px;
         font-family:'Work Sans', sans-serif;
         font-size:16px;
-        width:124px;
         height:50px;
         text-align:center;
-
-      }
-      .button:hover {
-        background-color:#FFBAC3;
-        transition: 0.2s;
       }
 
       #andrea {
         font-weight:600;
       }
 
-      .button-body {
-        font-family: 'Work Sans', sans-serif;
-        background-color: transparent;
-        color: #FF001F;
-        border: 1px solid #FF001F;
-        display: inline-block;
-        padding: 12px;
-        font-size:16px;
+      #button-about-me {
+        background-color:#FFF2F3;
+        border-bottom:1px solid transparent;
         width:180px;
-        height:50px;
-        text-align:center;
         display:flex;
         align-items:center;
         justify-content: center;
+        z-index:21;
+        margin-top:50px;
+      }
+      @media (max-width:700px) {
+        #button-about-me {
+          position:relative;
+          bottom:auto;
+          left:auto;
+        }
+      }
+      #button-about-me[hidden] {
+        background-color:rgba(255,255,255,0.1);
+        border: 1px solid #E7001C;
+      }
+      #button-about-me[hidden] svg {
+        fill:#FF001F;
+        margin-left:10px;
+        transform:rotate(0deg);
+      }
+      #button-about-me[hidden]:hover {
+        background-color:rgba(255,255,255,0.9);
+        transition:0.2s;
+      }
+      #button-about-me svg {
+        fill:#FF001F;
+        margin-left:10px;
+        transform:rotate(45deg);
+        transform-origin: center;
+        transition:0.2s;
+      }
+
+      #button-download {
+        width:155px;
         margin-top:25px;
       }
-      .button-body img {
-        width:15px;
-        height:15px;
-        padding-left:10px;
-        margin-right:0px!important;
-        box-sizing:content-box;
+      #button-download svg {
+        stroke:#FF001F;
       }
-      .button-body:hover {
-        background-color:#FFBAC3;
-        transition: 0.2s;
+      #button-download:hover svg {
+        transform:translateY(5px);
+        transition:0.2s;
       }
 
-      .button-download {
-        width:155px;
-      }
-
-      .button-download a {
+      #button-download a {
         text-decoration:none;
       }
 
-      .button-download a:hover {
-        color:#E7001C;
+      #button-download:hover {
+        background-color:white;
       }
 
       #contact-information {
@@ -434,7 +466,7 @@
         --slideshow-indicator-color: #4D4D4D;
       }
       #project-sm {
-        --container-color: #F9645C;
+        --container-color: #f29f9b;
       }
       #project-zz {
         --container-color: #C6CCC3;
@@ -476,7 +508,7 @@
       <div class="menu-element" id="menu-right">
         <a href="#about"><h3>about</h3></a>
         <a href="#work"><h3>work</h3></a>
-        <a href="#contact-me"><button class="button">contact me!</button></a>
+        <a href="#contact-me"><button class="button" id="button-contact-me">contact me!</button></a>
       </div>
 
       <div class="menu-mobile-button">
@@ -538,7 +570,21 @@
           Also, I spend a lot of time designing. Therefore you will run across <span id="about-me-emphasis">both commissioned and autonomous projects</span>. And with a background in social sciences, I have a special interest in <span id="about-me-emphasis">socially relevant projects</span>. Enjoy!
         </p>
 
-        <button class="button-body" on-tap="toggleMore">more about me<img src="../portfolio-project/images/icon-01.svg"></button>
+        <button
+        class="button"
+        id="button-about-me"
+        on-tap="toggleMore"
+        hidden$="[[hideMore]]">more about me
+          <svg version="1.1" id="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 15 15" style="width:15px; height:15px" xml:space="preserve">
+             <g class="line-vertical">
+               <rect x="7" width="1" height="15"/>
+             </g>
+             <g class="line-horizontal">
+               <rect x="0" y="7" width="15" height="1"/>
+             </g>
+          </svg>
+        </button>
 
     </section>
 
@@ -549,7 +595,23 @@
       <div>
         <img src="../portfolio-project/images/about.png">
       <p>
-        <button class="button-body button-download"><a href="../portfolio-project/images/CV_avendrik_english.pdf" target="_blank">download cv<img src="../portfolio-project/images/icon-03.svg"></a></button>
+        <button class="button" id="button-download"><a href="../portfolio-project/images/CV_avendrik_english.pdf" target="_blank">download cv
+
+          <svg version="1.1" id="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 15 15" style="width:14px; height:15px" xml:space="preserve">
+             <g>
+               <line x1="0" y1="7" x2="7" y2="15">
+             </g>
+             <g>
+               <line x1="14" y1="7" x2="7" y2="15">
+             </g>
+             <g>
+               <line x1="7" y1="0" x2="7" y2="15">
+             </g>
+          </svg>
+
+          <!-- <img src="../portfolio-project/images/icon-03.svg"> -->
+        </a></button>
       </p>
       </div>
       <div>

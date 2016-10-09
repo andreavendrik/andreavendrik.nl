@@ -104,8 +104,10 @@
       #description-container {
         position:absolute;
         bottom:0;
-        left:0px;
+        left:0;
+        right:0;
         margin-bottom: 25px;
+        z-index:25;
       }
       @media (max-width:700px) {
         #description-container {
@@ -114,11 +116,12 @@
         }
       }
 
-      #show-description {
+      #show-description-button {
         font-family:'Work Sans', sans-serif;
-        background-color: #FFBAC3;
-        color: #E7001C;
+        background-color:rgba(255,255,255,0.9);
         border: 1px solid #E7001C;
+        border-bottom:0px;
+        color:#E7001C;
         display: inline-block;
         padding: 12px;
         font-size:16px;
@@ -132,39 +135,32 @@
         margin-left:30px;
       }
       @media (max-width:700px) {
-        #show-description {
+        #show-description-button {
+          background-color:rgba(255,255,255,0.8);
           position:relative;
           bottom:auto;
           left:auto;
           margin:0px 0px 25px 25px;
         }
       }
-      #show-description[hidden] svg, #show-description[hidden] svg .line-horizontal, #show-description[hidden] svg .line-vertical {
+      #show-description-button[hidden] {
+        background-color:rgba(255,255,255,0.1);
+        border: 1px solid #E7001C;
+      }
+      #show-description-button[hidden] svg {
         fill:#FF001F;
         margin-left:10px;
         transform:rotate(0deg);
       }
-      #show-description svg {
+      #show-description-button[hidden]:hover {
+        background-color:rgba(255,255,255,0.9);
+        transition:0.2s;
+      }
+      #show-description-button svg {
         fill:#FF001F;
         margin-left:10px;
-      }
-      #show-description svg .line-horizontal {
-        transition:0.3s;
         transform:rotate(45deg);
         transform-origin: center;
-      }
-      #show-description svg .line-vertical {
-        transform:rotate(45deg);
-        transition:0.3s;
-        transform-origin: center;
-      }
-      #show-description:hover, #show-description[hidden]:hover {
-        background-color:#FFBAC3;
-        transition: 0.2s;
-      }
-      #show-description[hidden] {
-        background-color:white;
-        color: #E7001C;
       }
 
       #description-block {
@@ -190,10 +186,15 @@
       }
       @media (max-width:700px) {
         #description-block {
+          background-color:rgba(255,255,255,0.8);
           margin-bottom:0px;
+          margin-top:-25px;
           flex-direction:column;
           position:relative;
           opacity:1;
+        }
+        #description-block[hidden] {
+          margin-top:0px;
         }
       }
       #description-block p {
@@ -209,7 +210,7 @@
       @media (max-width:700px) {
         .description-details {
           max-width:100%;
-          padding: auto;
+          padding: 20px 25px 0px 25px;
         }
       }
 
@@ -222,8 +223,8 @@
         padding:20px;
       }
       @media (max-width:700px) {
-        .description-bodytext {
-          max-width:100%;
+        .description-main {
+          padding: 0px 25px 20px 25px;
         }
       }
 
@@ -231,7 +232,6 @@
         column-count:2;
         column-gap:30px;
         column-fill: auto;
-
       }
         @media (max-width:800px) {
           .description-bodytext {
@@ -242,6 +242,7 @@
         @media (max-width:700px) {
           .description-bodytext {
             padding-right:0px;
+            max-width:100%;
           }
         }
 
@@ -274,7 +275,7 @@
       <div id="description-container">
 
         <button
-        id="show-description"
+        id="show-description-button"
         hidden$="[[hideDescription]]"
         on-tap="toggleDescription">about project
           <svg version="1.1" id="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
