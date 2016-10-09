@@ -14,7 +14,7 @@
       }
 
       h1 {
-        font-family: 	'base-9-sans';
+        font-family: 	'base-9-sans', sans-serif;
         letter-spacing: -1px;
         font-weight:600;
         font-size: 40px;
@@ -103,7 +103,7 @@
 
       #show-description {
         font-family:'Work Sans', sans-serif;
-        background-color: transparent;
+        background-color: #FFBAC3;
         color: #E7001C;
         border: 1px solid #E7001C;
         display: inline-block;
@@ -118,7 +118,7 @@
         display:flex;
         align-items:center;
         justify-content: center;
-        z-index:5;
+        z-index:21;
       }
       @media (max-width:700px) {
         #show-description {
@@ -128,15 +128,32 @@
           margin:0px 0px 25px 25px;
         }
       }
-      #show-description img {
-        width:15px;
-        height:15px;
-        padding-left:10px;
-        box-sizing:content-box;
+      #show-description[hidden] svg, #show-description[hidden] svg .line-horizontal, #show-description[hidden] svg .line-vertical {
+        fill:#FF001F;
+        margin-left:10px;
+        transform:rotate(0deg);
       }
-      #show-description:hover {
+      #show-description svg {
+        fill:#FF001F;
+        margin-left:10px;
+      }
+      #show-description svg .line-horizontal {
+        transition:0.3s;
+        transform:rotate(45deg);
+        transform-origin: center;
+      }
+      #show-description svg .line-vertical {
+        transform:rotate(45deg);
+        transition:0.3s;
+        transform-origin: center;
+      }
+      #show-description:hover, #show-description[hidden]:hover {
+        background-color:#FFBAC3;
+        transition: 0.2s;
+      }
+      #show-description[hidden] {
         background-color:white;
-        transition: 0.3s;
+        color: #E7001C;
       }
 
       #description-block {
@@ -154,6 +171,7 @@
         font-size: 16px;
         line-height:22px;
         padding:20px 20px;
+        z-index:20;
       }
       @media (max-width:700px) {
         #description-block {
@@ -179,31 +197,33 @@
         }
       }
 
-
-      .description-bodytext {
+      .description-main {
         flex:1;
         display:flex;
         flex-direction: column;
         max-width:650px;
+        min-height:200px;
       }
       @media (max-width:700px) {
-        .description-text {
+        .description-bodytext {
           max-width:100%;
         }
       }
 
-      .description-text {
+      .description-bodytext {
         column-count:2;
         column-gap:30px;
+        column-fill: auto;
+
       }
         @media (max-width:800px) {
-          .description-text {
+          .description-bodytext {
             padding-right:50px;
             column-count:1;
           }
         }
         @media (max-width:700px) {
-          .description-text {
+          .description-bodytext {
             padding-right:0px;
           }
         }
@@ -220,6 +240,7 @@
       #description-container {
         position:relative;
       }
+      }
 
     </style>
 
@@ -234,24 +255,38 @@
       </figure>
 
       <div class="title-block">
-        <h2>[[titleDescription]]</h2>
+        <h2>[[titleLabel]]</h2>
         <h1>[[title]]</h1>
       </div>
 
       <div id="description-container">
 
-        <button id="show-description" on-tap="toggleDescription">about project<img src="../portfolio-project/images/icon-01.svg"></button>
+        <button id="show-description" hidden$="[[hideDescription]]" on-tap="toggleDescription">about project
+          <svg version="1.1" id="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	 viewBox="0 0 15 15" style="width:15px; height:15px" xml:space="preserve">
+             <g class="line-vertical">
+               <rect x="7" width="1" height="15"/>
+             </g>
+             <g class="line-horizontal">
+               <rect x="0" y="7" width="15" height="1"/>
+             </g>
+          </svg>
+
+          <!-- <img src="../portfolio-project/images/icon-01.svg"> -->
+        </button>
 
         <div id="description-block" hidden$="[[hideDescription]]">
           <div class="description-details">
+            <h3 class="description-heading">title</h3>
+            <p class="description-shorts">[[title]]</p>
             <h3 class="description-heading">what</h3>
             <p class="description-shorts">[[descriptionWhat]]</p>
             <h3 class="description-heading" id="description-heading-for">for</h3>
             <p class="description-shorts">[[descriptionFor]]</p>
           </div>
-          <div class="description-bodytext">
+          <div class="description-main">
             <h3 class="description-heading">description</h3>
-            <p class="description-text"><content></content></p>
+            <p class="description-bodytext"><content></content></p>
           </div>
         </div>
 
@@ -268,7 +303,8 @@
     properties: {
       image: String,
       title: String,
-      titleDescription: String,
+      titleLabel: String,
+      descriptionTitle: String,
       containerColor: String,
       descriptionWhat: String,
       descriptionFor: String,
