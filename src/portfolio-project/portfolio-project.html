@@ -17,9 +17,15 @@
         font-family: 	'base-9-sans', sans-serif;
         letter-spacing: -1px;
         font-weight:600;
-        font-size: 40px;
+        font-size: 35px;
         margin:20px 0px 0px 0px;
       }
+      @media (max-width:700px) {
+        h1 {
+          font-size:35px;
+        }
+      }
+
 
       h2 {
         font-family: 'Work Sans';
@@ -82,7 +88,7 @@
         position:absolute;
         left:30px;
         bottom:100px;
-        max-width:380px;
+        max-width:370px;
       }
       .title-block h1 {
         margin-top:10px;
@@ -91,13 +97,10 @@
         .title-block {
           position:relative;
           left:auto;
-          padding:25px;
+          padding:20px;
           bottom:auto;
           max-width:100%;
           background-color:transparent;
-        }
-        .title-block h2 {
-
         }
       }
 
@@ -107,12 +110,11 @@
         left:0;
         right:0;
         margin-bottom: 25px;
-        z-index:25;
       }
       @media (max-width:700px) {
         #description-container {
           position:relative;
-          margin-bottom:0px;
+          margin-bottom:20px;
         }
       }
 
@@ -140,7 +142,7 @@
           position:relative;
           bottom:auto;
           left:auto;
-          margin:0px 0px 25px 25px;
+          margin:0px 0px 15px 15px;
         }
       }
       #show-description-button[hidden] {
@@ -188,7 +190,7 @@
         #description-block {
           background-color:rgba(255,255,255,0.8);
           margin-bottom:0px;
-          margin-top:-25px;
+          margin-top:-15px;
           flex-direction:column;
           position:relative;
           opacity:1;
@@ -263,7 +265,9 @@
       <figure>
         <project-slideshow
         my-carousel-id="[[myCarouselId]]"
-        images="[[slideshowImages]]">
+        images="[[slideshowImages]]"
+        navigation-hidden="[[!hideDescription]]"
+        >
         </project-slideshow>
       </figure>
 

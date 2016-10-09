@@ -58,11 +58,16 @@
         justify-content:center;
         align-items:center;
       }
+
+      .carousel-indicators[hidden] {
+        display: none;
+      }
+
       .carousel-indicators li {
         background-color:var(--indicator-color,white);
         border:0;
         width:3px;
-        margin:0px 4px;
+        margin:4px 4px;
         height:3px;
         border-radius: 50%;
       }
@@ -75,7 +80,7 @@
 
       <div id$="[[myCarouselId]]" class="carousel slide" data-ride="carousel" data-interval="false">
         <!-- Indicators -->
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators" hidden$="[[navigationHidden]]">
 
           <template is="dom-repeat" items="[[images]]">
             <li
@@ -95,7 +100,7 @@
             <div class$="item [[_getSlideClass(index)]]">
 
               <template is="dom-if" if="[[_isVimeoVideo(item)]]">
-                <iframe src$="[[item]]?title=0&amp;byline-0&amp;portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <iframe src$="[[item]]" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               </template>
 
               <template is="dom-if" if="[[!_isVimeoVideo(item)]]">
@@ -128,6 +133,7 @@
     properties: {
       images: Array,
       myCarouselId: String,
+      navigationHidden: Boolean
     },
 
     _getSlideClass: function(i) {

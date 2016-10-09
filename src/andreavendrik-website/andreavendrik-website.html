@@ -11,7 +11,6 @@
     * {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-
     }
 
       h1 {
@@ -197,7 +196,7 @@
           font-weight:600;
           position:relative;
       }
-      @media (max-width:700px) {
+      @media (max-width:800px) {
         .section-heading {
           padding:10px 25px;
         }
@@ -276,20 +275,23 @@
       #button-mobile {
         width: 45px;
         height:45px;
-        background-color:#FFBAC3;
+        background-color:transparent;
         transition: 0.2s;
         transform:rotate(0deg);
-        border: 1px solid black;
+        border:1px solid white;
       }
       #button-mobile[hidden] {
-        background-color:transparent;
+        border: 1px solid black;
       }
       #button-mobile[hidden] svg {
         transform:rotate(0deg);
         transition:0.2s;
+        fill:black;
+        border:0px;
       }
       #button-mobile svg {
-        transform:rotate(45deg);
+        transform:rotate(90deg);
+        fill:white;
         transition:0.2s;
       }
 
@@ -306,7 +308,7 @@
         width:100%;
         height:100vh;
         background-color: black;
-        opacity:0.8;
+        opacity:0.9;
         z-index:29;
         text-align:center;
         color:white;
@@ -432,7 +434,7 @@
       }
 
       #project-ps {
-        --container-color: #7986CB;
+        --container-color: #95a0d6;
         --slideshow-indicator-color: #4D4D4D;
 
       }
@@ -640,7 +642,7 @@
 
           <portfolio-project id="project-ps"
           my-carousel-id="myCarousel-14"
-          slideshow-images='["https://player.vimeo.com/video/185711393" ,"../portfolio-project/images/Post_Supply/postsupply-desktop.gif", "../portfolio-project/images/Post_Supply/postsupply-mobile.gif", "../portfolio-project/images/Post_Supply/postsupply.png"]'
+          slideshow-images='["../portfolio-project/images/Post_Supply/postsupply-desktop.gif", "../portfolio-project/images/Post_Supply/postsupply-mobile.gif", "../portfolio-project/images/Post_Supply/postsupply.png"]'
           title="Post Press"
           title-label="web design & illustrations"
           description-what="product website & illustrations"
@@ -655,7 +657,7 @@
           "../portfolio-project/images/Strafrechtketen/sk_05.png",
           "../portfolio-project/images/Strafrechtketen/sk_06.png",
           "../portfolio-project/images/Strafrechtketen/sk_04.png"]'
-          title="the chain of criminal justice"
+          title="The chain of criminal justice"
           title-label="data visualisation"
           description-what="infographic"
           description-for="autonomous project about a report on criminal justice from 2007-2014">
@@ -732,7 +734,8 @@
 
           <portfolio-project id="project-op"
           my-carousel-id="myCarousel-8"
-          slideshow-images='["../portfolio-project/images/Oil_and_Paradise/OP_1.jpg",
+          slideshow-images='["https://player.vimeo.com/video/98620505?autoplay=0&loop=1&title=0&byline=0&portrait=0",
+          "../portfolio-project/images/Oil_and_Paradise/OP_1.jpg",
           "../portfolio-project/images/Oil_and_Paradise/OP_2.jpg",
           "../portfolio-project/images/Oil_and_Paradise/OP_3.jpg",
           "../portfolio-project/images/Oil_and_Paradise/OP_4.jpg",
@@ -769,7 +772,8 @@
 
           <portfolio-project id="project-vm"
           my-carousel-id="myCarousel-6"
-          slideshow-images='["../portfolio-project/images/Vintage_Mapp/vm_01.png", "../portfolio-project/images/Vintage_Mapp/vm_02.png",
+          slideshow-images='["https://player.vimeo.com/video/95441120?autoplay=0&loop=1&title=0&byline=0&portrait=0",
+          "../portfolio-project/images/Vintage_Mapp/vm_01.png", "../portfolio-project/images/Vintage_Mapp/vm_02.png",
           "../portfolio-project/images/Vintage_Mapp/vm_03.png"]'
           title="Vintage Mapp"
           title-label="visual identity & app design"
@@ -782,7 +786,7 @@
 
           <portfolio-project id="project-sm"
           my-carousel-id="myCarousel-5"
-          slideshow-images='["../portfolio-project/images/Sociologisch_Mokum/sm_1.jpg", "../portfolio-project/images/Sociologisch_Mokum/sm_2.jpg",
+          slideshow-images='["../portfolio-project/images/Sociologisch_Mokum/sm_2.jpg", "../portfolio-project/images/Sociologisch_Mokum/sm_1.jpg",
           "../portfolio-project/images/Sociologisch_Mokum/sm_3.jpg",
           "../portfolio-project/images/Sociologisch_Mokum/sm_4.jpg",
           "../portfolio-project/images/Sociologisch_Mokum/sm_5.jpg",
