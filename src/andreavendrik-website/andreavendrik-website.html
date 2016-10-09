@@ -15,12 +15,12 @@
     }
 
       h1 {
-        font-family: 	'base-12-sans', sans-serif;
-        letter-spacing: 1px;
+        font-family: 	'base-9-sans', sans-serif;
+        letter-spacing: -2px;
         /*font-style: italic;*/
         font-weight: 700;
-        font-size: 75px;
-        line-height:90px;
+        font-size: 60px;
+        line-height:80px;
         margin:50px 0px 0px 0px;
       }
       @media (max-width:700px) {
@@ -32,10 +32,10 @@
       }
 
       h2 {
-        font-family: 'Work Sans';
+        font-family: 'Work Sans', sans-serif;
         font-weight: 400;
-        font-size: 25px;
-        line-height: 36px;
+        font-size: 20px;
+        line-height: 28px;
         margin:0px;
       }
       @media (max-width:700px) {
@@ -46,7 +46,7 @@
       }
 
       h3 {
-        font-family: 'Work Sans';
+        font-family: 'Work Sans', sans-serif;
         font-weight: 400;
         font-size: 16px;
         margin:0px;
@@ -66,16 +66,16 @@
         display:flex;
         flex-direction: column;
         justify-content: center;
-        background-image: url('../portfolio-project/images/background.png');
+        /*background-image: url('../portfolio-project/images/background.png');*/
         background-size:150%;
         background-position: top center auto -100px;
         padding:125px 0px 75px;
         background-blend-mode:soft-light;
-        opacity:0.9;
+        opacity:0.95;
       }
       @media (max-width:700px) {
         #intro {
-          background-position: top center;
+          background-position: top left;
           background-size:cover;
           min-height:auto;
           padding:125px 0px 50px;
@@ -104,14 +104,14 @@
         }
       }
       .text-container p {
-        font-family:'Work Sans', sans-serif;
+        font-family:'Work Sans', sans-serif, sans-serif;
         font-size:30px;
         line-height:42px;
         font-weight: 400;
       }
       @media (max-width:800px) {
         .text-container p {
-          font-family:'Work Sans', sans-serif;
+          font-family:'Work Sans', sans-serif, sans-serif;
           font-size:24px;
           line-height:32px;
           font-weight: 400;
@@ -154,14 +154,14 @@
       #more-about-me p {
         padding:0px;
         max-width:400px;
-        font-family:'Work Sans', sans-serif;
+        font-family:'Work Sans', sans-serif, sans-serif;
         font-size:20px;
         line-height:28px;
       }
       @media (max-width:700px) {
         #more-about-me p {
           max-width:100%;
-          font-family:'Work Sans', sans-serif;
+          font-family:'Work Sans', sans-serif, sans-serif;
           font-size:16px;
           line-height:24px;
           font-weight: 400;
@@ -174,7 +174,7 @@
           margin:0px;
           padding:10px 50px 0px;
           background-color: transparent;
-          font-family:'Work Sans';
+          font-family:'Work Sans', sans-serif;
           font-size:16px;
           font-weight:600;
       }
@@ -207,9 +207,10 @@
         width:100%;
         display:flex;
         padding:15px 50px;
-        z-index:9999;
+        z-index:25;
         justify-content:space-between;
         align-items: center;
+        z-index:30;
       }
       @media (max-width:700px) {
         #menu {
@@ -239,12 +240,31 @@
       .menu-mobile-button {
         display:none;
       }
+
+      #button-mobile {
+        width: 45px;
+        height:45px;
+        background-color:#FFBAC3;
+        transition: 0.2s;
+        transform:rotate(0deg);
+      }
+      #button-mobile[hidden] {
+        background-color:white;
+      }
+      #button-mobile[hidden] svg {
+        transform:rotate(0deg);
+        transition:0.2s;
+      }
+      #button-mobile svg {
+        transform:rotate(45deg);
+        transition:0.2s;
+      }
+
       @media (max-width:600px) {
         .menu-mobile-button {
           display:block;
-          z-index:3;
+          }
         }
-      }
 
       #menu-mobile[hidden] {
         display:none;
@@ -254,7 +274,7 @@
         height:100vh;
         background-color: black;
         opacity:0.8;
-        z-index:2;
+        z-index:25;
         text-align:center;
         color:white;
         display:flex;
@@ -264,6 +284,11 @@
       }
       #menu-mobile h3 {
         margin:30px 0px;
+        font-size:24px;
+      }
+      #menu-mobile a {
+        color:white;
+        text-decoration: none;
       }
 
       portfolio-project {
@@ -271,22 +296,22 @@
       }
 
       .button {
-        font-family:'Work Sans', sans-serif;
+        font-family:'Work Sans', sans-serif, sans-serif;
         background-color: transparent;
         border: 1px solid black;
         color: black;
         display: inline-block;
-        padding: 12px 12px;
-        font-family:'Work Sans';
+        padding: 12px 6px;
+        font-family:'Work Sans', sans-serif;
         font-size:16px;
-        width:100px;
+        width:124px;
         height:50px;
         text-align:center;
 
       }
       .button:hover {
         background-color:#FFBAC3;
-        transition: 0.3s;
+        transition: 0.2s;
       }
 
       #andrea {
@@ -294,7 +319,7 @@
       }
 
       .button-body {
-        font-family: 'Work Sans';
+        font-family: 'Work Sans', sans-serif;
         background-color: transparent;
         color: #FF001F;
         border: 1px solid #FF001F;
@@ -318,11 +343,19 @@
       }
       .button-body:hover {
         background-color:#FFBAC3;
-        transition: 0.3s;
+        transition: 0.2s;
       }
 
       .button-download {
         width:155px;
+      }
+
+      .button-download a {
+        text-decoration:none;
+      }
+
+      .button-download a:hover {
+        color:#E7001C;
       }
 
       #contact-information {
@@ -346,6 +379,10 @@
 
       #emoji {
         font-size:16px;
+      }
+
+      #project-sk {
+        --container-color: #f7f7f7;
       }
 
       #project-ps {
@@ -418,19 +455,35 @@
       <div class="menu-element" id="menu-right">
         <a href="#about"><h3>about</h3></a>
         <a href="#work"><h3>work</h3></a>
-        <a href="#hire-me"><button class="button">hire me!</button></a>
+        <a href="#contact-me"><button class="button">contact me!</button></a>
       </div>
+
       <div class="menu-mobile-button">
-        <button class="button" on-tap="toggleMenu">menu</button>
+
+        <button class="button" hidden$="[[hideMenu]]" id="button-mobile" on-tap="toggleMenu">
+          <svg version="1.1" id="menu-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 19 19" style="width:19px; height:19px" xml:space="preserve">
+             <g class="line-1">
+               <rect x="0" y="0" width="20" height="1"/>
+             </g>
+             <g class="line-2">
+               <rect x="0" y="9" width="20" height="1"/>
+             </g>
+             <g class="line-3">
+               <rect x="0" y="18" width="20" height="1"/>
+             </g>
+          </svg>
+
+        </button>
       </div>
     </section>
 
 <!-- Mobile menu -->
 
     <section id="menu-mobile" hidden$="[[hideMenu]]">
-      <h3>about</h3>
-      <h3>work</h3>
-      <h3>hire me!</h3>
+      <a href="#about"><h3>about</h3></a>
+      <a href="#work"><h3>work</h3></a>
+      <a href="#contact-me"><h3>contact me!</h3></a>
     </section>
 
 <!-- Introduction -->
@@ -451,7 +504,7 @@
 
     <div class="section-heading" id="about">
       <p>
-        about me.
+        about me
       </p>
     </div>
 
@@ -476,7 +529,7 @@
       <div>
         <img src="../portfolio-project/images/about.png">
       <p>
-        <button class="button-body button-download">download cv<img src="../portfolio-project/images/icon-03.svg"></button>
+        <button class="button-body button-download"><a href="../portfolio-project/images/CV_avendrik_english.pdf" target="_blank">download cv<img src="../portfolio-project/images/icon-03.svg"></a></button>
       </p>
       </div>
       <div>
@@ -498,19 +551,32 @@
 
       <div class="section-heading" id="work">
         <p>
-          work.
+          work
         </p>
       </div>
 
           <portfolio-project id="project-ps"
-          my-carousel-id="myCarousel-13"
+          my-carousel-id="myCarousel-14"
           slideshow-images='["../portfolio-project/images/Post_Supply/postsupply-desktop.gif", "../portfolio-project/images/Post_Supply/postsupply-mobile.gif", "../portfolio-project/images/Post_Supply/postsupply.png"]'
           title="Post Press"
-          title-description="website design & illustrations"
-          description-what="website & illustrations"
-          description-for="Post Press, a product by New Atoms">
+          title-label="web design & illustrations"
+          description-what="product website & illustrations"
+          description-for="New Atoms, a journalistic startup">
           <a href="http://www.post.press" target="_blank">Post Press</a> is a service that offers an editorial team to businesses for creating blog and social media posts. In collaboration with the team I designed and programmed the product landing page, and created the identity and illustrations.<br>
           Some illustrations/icons were based on illustrations found on the Noun project. Credits go to <a href="https://thenounproject.com/Nozzman/" target="_blank">Bram van Rijen</a> (single Twitterbird), <a href="https://thenounproject.com/thijsrentier" target="_blank">Thijs Rentier</a> (icon with flag on mountain) and <a href="https://thenounproject.com/leemette" target="_blank">Lee mette</a> (paper plane).
+          </portfolio-project>
+
+          <portfolio-project id="project-sk"
+          my-carousel-id="myCarousel-13"
+          slideshow-images='["../portfolio-project/images/Strafrechtketen/sk_01.png",
+          "../portfolio-project/images/Strafrechtketen/sk_05.png",
+          "../portfolio-project/images/Strafrechtketen/sk_06.png",
+          "../portfolio-project/images/Strafrechtketen/sk_04.png"]'
+          title="the chain of criminal justice"
+          title-label="data visualisation"
+          description-what="infographic"
+          description-for="autonomous project about a report on criminal justice from 2007-2014">
+
           </portfolio-project>
 
           <portfolio-project id="project-ts"
@@ -520,8 +586,8 @@
           "../portfolio-project/images/True_Story/ts_02.png", "../portfolio-project/images/True_Story/ts_03.png",
           "../portfolio-project/images/True_Story/ts_04.jpg", "../portfolio-project/images/True_Story/ts_05.jpg", "../portfolio-project/images/True_Story/ts_06.jpg"]'
           title="True Story?"
-          title-description="app & visual identity design"
-          description-what="app"
+          title-label="app design & visual identity"
+          description-what="application and visual identity"
           description-for="graduation project Master of Graphic Design, AKV St. Joost">
           Following the What Where Whom How Who project I developed a more ambitious project originating from the same trail of thought: a journalists’ job is riddled with making choices. One event can be retold in millions of ways. Is there one valid version, or an endless parade of subjective ones? Or, using the title of this project: is there such a thing as a True Story?<br><br>
 
@@ -534,9 +600,12 @@
 
           <portfolio-project id="project-wykygo"
           my-carousel-id="myCarousel-11"
-          slideshow-images='["../portfolio-project/images/DWJDJOW/dwjdjow.gif"]'
-          title="Getting old"
-          title-description="illustration"
+          slideshow-images='["../portfolio-project/images/DWJDJOW/dwjdjow-3.gif",
+          "../portfolio-project/images/DWJDJOW/dwjdjow-2.gif",
+          "../portfolio-project/images/DWJDJOW/dwjdjow-1.gif",
+          "../portfolio-project/images/DWJDJOW/dwjdjow-4.jpg"]'
+          title="When you know you're getting old"
+          title-label="illustration"
           description-what="illustration series"
           description-for="autonomous project about getting older">
 
@@ -556,7 +625,7 @@
           "../portfolio-project/images/WWWHW/WWWHW_06.jpg", "../portfolio-project/images/WWWHW/WWWHW_07.jpg"]'
 
           title="What Where Whom How Who"
-          title-description="book design"
+          title-label="editorial design"
           description-what="book"
           description-for="autonomous project about the death of Michael Brown">
           On August 9, 2014 in Ferguson, Missouri, Michael Brown was shot by police officer Darren Wilson. As Michael Brown was African American, it was placed in line with other recent cases of police violence against black people. Being the final straw for many, it caused great outrage across the entire country.<br><br>
@@ -572,9 +641,9 @@
           my-carousel-id="myCarousel-9"
           slideshow-images='["../portfolio-project/images/SHMG/SHMG.jpg"]'
           title="So help me God"
-          title-description="poster design"
+          title-label="poster design"
           description-what="poster, DVD sleeve and film titling"
-          description-for="So Help Me God, a documentary by Thomas Vroege">
+          description-for="Thomas Vroege, filmmaker">
           So Help Me God is the name of a documentary filmed and directed by Thomas Vroege. I was asked to create the graphic identity: poster, film titles and DVD design. Watching So Help Me God feels like being the audience of a well rehearsed play. It takes us on a visual journey through the financial world in the City, London, with its residents mostly distant and estranging but at times oddly close and human.
           </portfolio-project>
 
@@ -589,9 +658,9 @@
           "../portfolio-project/images/Oil_and_Paradise/OP_7.jpg",
           "../portfolio-project/images/Oil_and_Paradise/OP_8.jpg"]'
           title="Oil & Paradise"
-          title-description="exhibition & book design"
+          title-label="exhibition & editorial design"
           description-what="exhibition and book"
-          description-for="Oil & Paradise, photography project and documentary by Ad Nuis">
+          description-for="photographer Ad Nuis & Paradox">
           Oil & Paradise, 10 trips to Azerbaijan is a project by photographer Ad Nuis. It consists of an audiovisual installation, accompanying exhibition at the Nederlands Fotomuseum (up in summer 2014), book app and print on demand photobook. Together with <a href="http://iamjykim.tumblr.com/" target="_blank">Jinyoung Kim</a> and <a href="http://www.alessandrocarosso.com/" target="_blank">Alessandro Carosso</a> I was asked to design and cooperate with <a href="http://www.paradox.nl/" target="_blank">Paradox</a> in the editing of the exhibition and book.<br><br>
 
           When Ad Nuis turned fifty and took stock of his life and work, it was time for a new adventure. In a Tin Tin fashion, he went to discover a new world of money, power, women.<br>
@@ -609,9 +678,9 @@
           slideshow-images='["../portfolio-project/images/Get_High_On_Nostalgia/get_high_on_nostalgia_1.jpg", "../portfolio-project/images/Get_High_On_Nostalgia/get_high_on_nostalgia_2.jpg",
           "../portfolio-project/images/Get_High_On_Nostalgia/get_high_on_nostalgia_3.jpg"]'
           title="Get high on the future"
-          title-description="poster design"
+          title-label="poster design"
           description-what="poster series"
-          description-for="autonomous project">
+          description-for="autonomous project about nostalgia">
           When the future doesn’t ooze with brightness, we tend to get nostalgic for the past. Embracing retro, figuratively turning the hourglass upside down, we escape from the present, pretending we are somewhere else. Some place familiar, rosy, nicer, where all troubles are absent and the world is nothing but bliss. Like drugging ourselves. But if we continue to shun from looking forward, nothing will ever happen. With these posters, I make a clear case: get high on the future, not on nostalgia.
           </portfolio-project>
 
@@ -620,9 +689,9 @@
           slideshow-images='["../portfolio-project/images/Vintage_Mapp/vm_01.png", "../portfolio-project/images/Vintage_Mapp/vm_02.png",
           "../portfolio-project/images/Vintage_Mapp/vm_03.png"]'
           title="Vintage Mapp"
-          title-description="visual identity & app design"
-          description-what="mobile application"
-          description-for="Vintage Mapp">
+          title-label="visual identity & app design"
+          description-what="mobile application & visual identity"
+          description-for="Vintage Mapp, a second hand clothing app">
 
           VintageMapp is a tool that provides vintage lovers with a complete guide to secondhand clothing and bric-a-brac in Amsterdam, by simply mapping all shops and markets in the area. I developed the complete identity, from logo and promotional materials to app design and website. Keywords are fresh, clean and a tinge of retro.
           </portfolio-project>
@@ -636,11 +705,11 @@
           "../portfolio-project/images/Sociologisch_Mokum/sm_5.jpg",
           "../portfolio-project/images/Sociologisch_Mokum/sm_6.jpg"]'
           title="Sociologisch Mokum"
-          title-description="editorial design"
+          title-label="editorial design"
           description-what="magazine"
-          description-for="Sociologisch Mokum">
+          description-for="the University of Amsterdam">
 
-          SoMo (Sociologisch Mokum – Sociological Mokum) is the magazine of the study Sociology at the University of Amsterdam. It mostly serves as a testlab for aspiring ‘sociological’ writers, scientists, photographers and other enthusiasts, as students voluntarily bring in all content and imagery. The budget is limited – only the cover is printed in colour.<br><br>
+          SoMo (Sociologisch Mokum) is the magazine of the study Sociology at the University of Amsterdam. It mostly serves as a testlab for aspiring ‘sociological’ writers, scientists and photographers, as students voluntarily produce all content and imagery. The budget is limited, only the cover is printed in colour.<br>
 
           In the fall of 2011, I got the challenging job to transform this mishmash of content into an attractive, friendly, and most of all accessible magazine. I redesigned SoMo from the ground up and took care of it for two volumes. I also contributed to cover and photography concepts.
           </portfolio-project>
@@ -652,9 +721,9 @@
           "../portfolio-project/images/Zeeziek/zz_03.jpg",
           "../portfolio-project/images/Zeeziek/zz_04.jpg"]'
           title="Zeeziek in het Rijks"
-          title-description="postcard design"
+          title-label="postcard design"
           description-what="series of postcards"
-          description-for="autonomous work for Rijksmuseum">
+          description-for="autonomous project for Rijksmuseum">
 
           The Rijksmuseum in Amsterdam was reopened in spring of 2013. Alongside a new project was launched: the Rijksstudio, an open online database of 125.000 artworks the museum owns. It enables visitors to download these century-old masterpieces and invites them to use the works for something new. And so I did. During a visit to the museum, the paintings of the sea by the old Dutch masters fascinated me. The sea can be deceivingly calm or terribly wild. It liberates or swallows you, comforts or griefs you, is a friend or a foe. I sought to create something that would express this manifold split personality in all its beauty and be a souvenir of my experience at the museum. I decided on a little booklet of souvenir postcards, titled Zeeziek in het Rijks (Seasick at the Rijks).
           </portfolio-project>
@@ -664,9 +733,9 @@
           my-carousel-id="myCarousel-3"
           slideshow-images='["../portfolio-project/images/Topsy_Turvy/TT_01.jpg",  "../portfolio-project/images/Topsy_Turvy/TT_02.jpg"]'
           title="Topsy Turvy"
-          title-description="poster design"
+          title-label="poster design"
           description-what="two posters"
-          description-for="autonomous work for the Topsy Turvy exhibition">
+          description-for="autonomous project for the Topsy Turvy exhibition in museum De Appel">
 
           Topsy Turvy was the title of an exhibition in de Appel arts centre in Amsterdam. It was based on the carnival festival, a holiday of exuberant celebration during which the world is turned upside down (the literal translation of Topsy Turvy). I designed two announcement posters. The common grey world gets fragmented into a chaotic mosaic of a thousand brightly coloured pieces.
           </portfolio-project>
@@ -676,9 +745,9 @@
           my-carousel-id="myCarousel-2"
           slideshow-images='["../portfolio-project/images/Multoblaadjes/mb_01.jpg", "../portfolio-project/images/Multoblaadjes/mb_02.jpg", "../portfolio-project/images/Multoblaadjes/mb_03.jpg"]'
           title="Multoblaadjes"
-          title-description="book design"
+          title-label="book design"
           description-what="two books"
-          description-for="University of Amsterdam">
+          description-for="the University of Amsterdam">
           Multoblaadjes is a collection of columns by university lecturer Bart van Heerikhuizen, on the occasion of his retirement. Multoblaadjes are binder sheets, which van Heerikhuizen used to scribble down his thoughts. These notes formed the starting point of every piece he wrote. I designed the book and came up with a cover concept in collaboration with photographer Elske Verdoorn. We decided to illustrate the process of organizing and reorganizing thoughts and ideas to a single coherent writing piece in a playful way.<br><br>
           Alongside this a liber amicorum was made, which was designed to subtly act as a little brother to Multoblaadjes. Cover photography by Eva van Barneveld.
           </portfolio-project>
@@ -687,7 +756,7 @@
           my-carousel-id="myCarousel-1"
           slideshow-images='["../portfolio-project/images/Bericht_Gemist/bg_01.gif", "../portfolio-project/images/Bericht_Gemist/bg_02.jpg", "../portfolio-project/images/Bericht_Gemist/bg_03.jpg"]'
           title="Bericht Gemist"
-          title-description="newspaper design"
+          title-label="editorial design"
           description-what="alternative newspaper"
           description-for="autonomous project">
           B:g (bericht: gemist, message: missed) is the title of an imaginary newspaper supplement. The content is made up of ‘messages’ that have each been put together by crossing out words from a randomly selected newspaper article, until a single sentence remains. These sentences make up little stories which all share an element of humour, surprise or lunacy.<br>
@@ -700,12 +769,12 @@
 
     <div class="section-heading">
       <p>
-        hire me!
+        contact me!
       </p>
       <!-- <img src="../portfolio-project/images/icon-03.svg"> -->
     </div>
 
-    <section id="hire-me" class="text-container">
+    <section id="contact-me" class="text-container">
       <p>
         I am open to commissions.<br>
         Be it a visual identity, website, book or app, be it a big or small project, I can help you.
