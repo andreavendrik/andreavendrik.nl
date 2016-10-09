@@ -69,7 +69,7 @@
         /*background-image: url('../portfolio-project/images/background.png');*/
         background-size:150%;
         background-position: top center auto -100px;
-        padding:125px 0px 75px;
+        padding:100px 0px 75px;
         background-blend-mode:soft-light;
         opacity:0.95;
       }
@@ -200,9 +200,14 @@
         color:rgba(0,0,0,0.9);
       }
 
+      #menu[data-scrolled] {
+        background-color: rgba(255,255,255,0.9);
+      }
+
       #menu {
         position:fixed;
-        background-color: white;
+        transition: 0.4s;
+        background-color: transparent;
         box-sizing:border-box;
         width:100%;
         display:flex;
@@ -211,6 +216,7 @@
         justify-content:space-between;
         align-items: center;
         z-index:30;
+
       }
       @media (max-width:700px) {
         #menu {
@@ -447,7 +453,7 @@
 
 <!-- Menu -->
 
-    <section id="menu">
+    <section id="menu" data-scrolled$="[[scrolled]]">
       <div class="menu-element" id="menu-left">
         <h3><span id="andrea">andrea vendrik</span><br>
         graphic designer</h3>
@@ -459,7 +465,6 @@
       </div>
 
       <div class="menu-mobile-button">
-
         <button class="button" hidden$="[[hideMenu]]" id="button-mobile" on-tap="toggleMenu">
           <svg version="1.1" id="menu-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="0 0 19 19" style="width:19px; height:19px" xml:space="preserve">
@@ -473,7 +478,6 @@
                <rect x="0" y="18" width="20" height="1"/>
              </g>
           </svg>
-
         </button>
       </div>
     </section>
@@ -802,6 +806,14 @@
 
       is: 'andreavendrik-website',
 
+      ready: function() {
+        window.addEventListener('scroll', (function() {
+          var scrollY = window.pageYOffset;
+          if(scrollY < 100) this.scrolled = false;
+          else this.scrolled = true;
+        }).bind(this))
+      },
+
       properties: {
         hideMore: {
           type: Boolean,
@@ -810,6 +822,10 @@
         hideMenu: {
           type: Boolean,
           value: true,
+        },
+        scrolled: {
+          type: Boolean,
+          value: false,
         }
       },
       toggleMore:function() {
