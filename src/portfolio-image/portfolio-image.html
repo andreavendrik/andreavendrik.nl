@@ -1,0 +1,106 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="portfolio-image">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      :host img {
+        opacity: 0;
+        transition: 0.5s opacity;
+        display: block;
+      }
+
+      :host:not([loaded]) img[hidden] {
+        display: none;
+      }
+
+      :host[loaded] img {
+        opacity: 1;
+      }
+    </style>
+
+    <img
+      src$="[[src]]"
+      hidden$="[[!visible]]"
+      on-load="_handleImageLoaded"
+      alt=""
+    >
+
+  </template>
+
+  <script>
+  Polymer({
+    is: 'portfolio-image',
+
+    properties: {
+      
+      url: String,
+
+      src: {
+        type: String,
+        value: null
+      },
+      
+      scrollPosition: {
+        type: Number,
+        value: 0
+      },
+
+      loaded: {
+        type: Boolean,
+        value: false,
+        reflectToAttribute: true
+      },
+
+      visible: {
+        type: Boolean,
+        computed: "_computeVisible(scrollPosition)"
+      }
+    },
+
+    observers: [
+      '_loadImage(loaded, visible)'
+    ],
+
+    ready: function() {
+      window.addEventListener('scroll', (function() {
+          this.scrollPosition = window.pageYOffset;
+      }).bind(this))
+    },
+
+    _loadImage: function(loaded, visible) {
+      if(loaded) return;
+      if(!visible) return;
+      this.src = this.resolveUrl(this.url);
+    },
+
+    _computeVisible: function(scrollPosition) {
+      if(!this.parentElement) return false;
+      var r, html;
+      html = document.documentElement;
+      r = this.parentElement.getBoundingClientRect();
+
+      var visible = ( !!r 
+        && r.bottom >= 0 
+        && r.right >= 0 
+        && r.top <= html.clientHeight 
+        && r.left <= html.clientWidth 
+      );
+      
+      return visible;
+    },
+
+    _handleImageLoaded: function() {
+      this.loaded = true;
+    }
+
+  })
+  </script>
+
+</dom-module>
