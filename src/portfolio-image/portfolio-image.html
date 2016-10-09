@@ -12,7 +12,10 @@
 
       :host img {
         opacity: 0;
-        transition: 0.5s opacity;
+        transition: 0.4s;
+        transition-delay:0.2s;
+        transition-timing-function: ease-in;
+        transform:translateY(20px);
         display: block;
       }
 
@@ -34,6 +37,7 @@
 
       :host[loaded] img {
         opacity: 1;
+        transform:translateY(0px);
       }
     </style>
 
