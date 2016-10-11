@@ -14,9 +14,8 @@
     }
 
       h1 {
-        font-family: 'base-9-sans', sans-serif;
-        letter-spacing: -1px;
-        font-weight:600;
+        font-family: 'Work Sans', sans-serif;
+        font-weight:700;
         font-size: 60px;
         line-height:75px;
         margin:50px 0px 0px 0px;
@@ -67,7 +66,7 @@
         /*background-image: url('../portfolio-project/images/background.png');*/
         background-size:150%;
         background-position: top center auto -100px;
-        padding:100px 0px 75px;
+        padding:100px 0px 0px;
         background-blend-mode:soft-light;
         opacity:0.95;
         transition:0.5s;
@@ -77,7 +76,7 @@
           background-position: top left;
           background-size:cover;
           min-height:auto;
-          padding:125px 0px 50px;
+          padding:125px 0px 0px;
         }
       }
       @media (max-width:900px) {
@@ -90,17 +89,20 @@
           display:none;
         }
       }
-      #intro h1, #intro h2, #about-me {
+      #intro h2 {
+        margin-top:50px;
+      }
+      #intro-animation-1, #intro-animation-2, #intro-animation-3 {
         animation:introAnimation 0.8s forwards;
         animation-delay:0.5s;
         opacity:0;
       }
-      #intro h1 {
+       #intro-animation-2 {
         animation-delay:1s;
-      }
-      #about-me {
-        animation-delay:2s;
-      }
+        }
+        #intro-animation-3 {
+          animation-delay:1.3s;
+        }
       @keyframes introAnimation {
         0% {
           transform: translate(0, 50px);
@@ -115,12 +117,12 @@
       .text-container {
         max-width:1000px;
         margin:auto;
-        padding:75px 50px;
+        padding:0px 50px;
         box-sizing:border-box;
       }
       @media (max-width:800px) {
         .text-container {
-          padding:50px 25px;
+          padding:0px 25px;
         }
       }
       .text-container p {
@@ -133,63 +135,58 @@
       @media (max-width:800px) {
         .text-container p {
           font-family:'Work Sans', sans-serif, sans-serif;
-          font-size:24px;
-          line-height:32px;
+          font-size:17px;
+          line-height:24px;
           font-weight: 400;
         }
       }
 
-      #more-about-me[hidden] {
+      #section-about-me[hidden] {
         display:none;
       }
-      #more-about-me {
+      #section-about-me {
         max-width:100%;
         background-color: #FFF2F3;
-        margin-top:-75px;
         padding:50px 0px;
         display:flex;
         flex-wrap:wrap;
         justify-content:center;
-      }
-      @media (max-width:800px) {
-        #more-about-me {
-          margin-top:-50px;
-        }
+        z-index:10;
       }
       @media (max-width:700px) {
-        #more-about-me {
-          padding:50px 25px;
+        #section-about-me {
+          padding:50px 0px;
         }
       }
-      #more-about-me div {
+      #section-about-me div {
         display:flex;
         flex-direction:column;
       }
       @media (max-width:900px) {
-        #more-about-me div {
+        #section-about-me div {
           padding:25px 150px 0px 150px;
           width:100%;
         }
       }
       @media (max-width:700px) {
-        #more-about-me div {
+        #section-about-me div {
           padding:25px 25px 0px 25px;
           width:100%;
         }
       }
-      #more-about-me img {
+      #section-about-me img {
         max-width:400px;
         margin-right:50px;
       }
       @media (max-width:900px) {
-        #more-about-me img {
+        #section-about-me img {
           margin-right:0px;
           max-width:100%;
           max-height:100%;
         }
       }
 
-      #more-about-me p {
+      #section-about-me p {
         padding:0px;
         max-width:400px;
         font-family:'Work Sans', sans-serif, sans-serif;
@@ -197,7 +194,7 @@
         line-height:28px;
       }
       @media (max-width:900px) {
-        #more-about-me p {
+        #section-about-me p {
           max-width:100%;
           font-family:'Work Sans', sans-serif, sans-serif;
           font-size:16px;
@@ -371,13 +368,15 @@
 
       #button-about-me {
         background-color:#FFF2F3;
+        color:black;
+        border:1px solid black;
         border-bottom:1px solid transparent;
         width:180px;
         display:flex;
         align-items:center;
         justify-content: center;
         z-index:21;
-        margin-top:50px;
+        margin:25px 0px 0px 0px;
       }
       @media (max-width:700px) {
         #button-about-me {
@@ -387,11 +386,13 @@
         }
       }
       #button-about-me[hidden] {
-        background-color:rgba(255,255,255,0.1);
-        border: 1px solid #E7001C;
+        background-color:transparent;
+        border: 1px solid black;
+        color:black;
+        margin:25px 0px 50px 0px;
       }
       #button-about-me[hidden] svg {
-        fill:#FF001F;
+        fill:black;
         margin-left:10px;
         transform:rotate(0deg);
       }
@@ -400,7 +401,7 @@
         transition:0.2s;
       }
       #button-about-me svg {
-        fill:#FF001F;
+        fill:black;
         margin-left:10px;
         transform:rotate(45deg);
         transform-origin: center;
@@ -426,6 +427,9 @@
       #button-download:hover {
         background-color:white;
       }
+      #section-contact-me {
+        margin:50px auto 75px;
+      }
 
       #contact-information {
         display:flex;
@@ -433,9 +437,14 @@
         flex-wrap: wrap;
         margin-top:50px;
       }
+      #contact-information h3 {
+        margin-top:10px;
+        font-weight:600;
+      }
       @media (max-width:900px) {
         #contact-information {
           flex-direction:column;
+          margin-top:25px;
         }
       }
       #contact-information div {
@@ -448,6 +457,14 @@
 
       #emoji {
         font-size:16px;
+      }
+      #emoji-big {
+        font-size:24px;
+      }
+      @media (max-width:800px) {
+        #emoji-big {
+          font-size:16px;
+        }
       }
 
       #project-sk {
@@ -565,85 +582,73 @@
 
     <section id="intro">
       <div class="text-container">
+        <a id="about"></a>
+          <h2 id="intro-animation-1">Oh, hello. You look mighty nice today! <span id="emoji">😏</span><br>
+            Allow me to introduce myself:</h2>
 
-        <h2>Oh, hello. You look mighty nice today! <span id="emoji">😏</span><br>
-        Allow me to introduce myself:</h2>
+          <h1 id="intro-animation-2">My name is Andrea Vendrik.<br>
+            I am a graphic designer with a wildly diverse portfolio.</h1>
 
-        <h1>My name is Andrea Vendrik.<br>
-        I am a graphic designer based in Amsterdam.</h1>
+        <div id="intro-animation-3">
+
+          <!-- About me button -->
+
+          <button
+          class="button"
+          id="button-about-me"
+          on-tap="toggleMore"
+          hidden$="[[hideMore]]">more about me
+            <svg version="1.1" id="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 15 15" style="width:15px; height:15px" xml:space="preserve">
+               <g class="line-vertical">
+                 <rect x="7" width="1" height="15"/>
+               </g>
+               <g class="line-horizontal">
+                 <rect x="0" y="7" width="15" height="1"/>
+               </g>
+            </svg>
+          </button>
+        </div>
+
       </div>
 
     </section>
-
-<!-- About me introduction -->
-
-    <div class="section-heading">
-      <a id="about"></a>
-      <p>
-        about me
-      </p>
-    </div>
-
-
-    <section id="about-me" class="text-container">
-        <p>
-          Some things before we move on to my work: I love me some variety. Websites, books, apps, logos, posters… <span id="about-me-emphasis">my portfolio is wildly diverse</span>. Pigeonholing will be hard.
-        </p>
-
-        <p>
-          Also, I spend a lot of time designing. Therefore you will run across <span id="about-me-emphasis">both commissioned and autonomous projects</span>. And with a background in social sciences, I have a special interest in <span id="about-me-emphasis">socially relevant projects</span>. Enjoy!
-        </p>
-
-        <button
-        class="button"
-        id="button-about-me"
-        on-tap="toggleMore"
-        hidden$="[[hideMore]]">more about me
-          <svg version="1.1" id="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 15 15" style="width:15px; height:15px" xml:space="preserve">
-             <g class="line-vertical">
-               <rect x="7" width="1" height="15"/>
-             </g>
-             <g class="line-horizontal">
-               <rect x="0" y="7" width="15" height="1"/>
-             </g>
-          </svg>
-        </button>
-
-    </section>
-
 
 <!-- About me unfold -->
 
-    <section id="more-about-me" hidden$="[[hideMore]]">
+
+    <section id="section-about-me" hidden$="[[hideMore]]">
       <div>
         <img src="https://firebasestorage.googleapis.com/v0/b/andrea-vendrik-portfolio.appspot.com/o/about.png?alt=media&token=f661b877-ad16-4079-baa4-60e953152a8c">
-      <p>
-        <button class="button" id="button-download"><a href="https://firebasestorage.googleapis.com/v0/b/andrea-vendrik-portfolio.appspot.com/o/CV_avendrik_english.pdf?alt=media&token=5d0add76-6317-45ad-92d7-a4b3764ce944" target="_blank">download cv
+        <p>
+          <button class="button" id="button-download"><a href="https://firebasestorage.googleapis.com/v0/b/andrea-vendrik-portfolio.appspot.com/o/CV_avendrik_english.pdf?alt=media&token=5d0add76-6317-45ad-92d7-a4b3764ce944" target="_blank">download cv
 
-          <svg version="1.1" id="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 15 15" style="width:14px; height:15px" xml:space="preserve">
-             <g>
-               <line x1="0" y1="7" x2="7" y2="15">
-             </g>
-             <g>
-               <line x1="14" y1="7" x2="7" y2="15">
-             </g>
-             <g>
-               <line x1="7" y1="0" x2="7" y2="15">
-             </g>
-          </svg>
+            <svg version="1.1" id="plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 15 15" style="width:14px; height:15px" xml:space="preserve">
+               <g>
+                 <line x1="0" y1="7" x2="7" y2="15">
+               </g>
+               <g>
+                 <line x1="14" y1="7" x2="7" y2="15">
+               </g>
+               <g>
+                 <line x1="7" y1="0" x2="7" y2="15">
+               </g>
+            </svg>
 
-        </a></button>
-      </p>
+          </a></button>
+        </p>
       </div>
+
       <div>
         <p>
-          I am a generalist at heart. Besides loads of different fields within graphic design, I love writing and illustrating.
-          With a background in sociology, I have a special interest in people and society. I am intrigued with how people make sense and construct the world around them. This interest resonates in my autonomous projects, which reflect on societal topics and aim to increase understanding or stir discussion amongst the viewers.
+          As a designer, I love me some variety. Websites, books, apps, logos, posters… <span id="about-me-emphasis">pigeonholing will be hard</span>.
         </p>
         <p>
-          The connection between social sciences and design can be found in a strong will to understand and (visually) order the world of people and information. Unclarity genuinely upsets me. Thus, what I love most about design is translating raw information into a clear, useable designs.
+          But there are more specific things to be said about me as well! Besides designing, I love illustrating and writing. And with a background in sociology, <span id="about-me-emphasis">I have a special interest in socially relevant projects</span> and –more broadly– people and society. I am intrigued with how people make sense and construct the world around them. This interest resonates in my autonomous projects, which reflect on societal topics and aim to increase understanding or stir discussion amongst the viewers. <span id="about-me-emphasis">Therefore you will run across both commissioned and autonomous projects in this portfolio.</span>
+        </p>
+        <p>
+          The connection between social sciences and design can be found in a strong will to understand and (visually) order the world of people and information. <span id="about-me-emphasis">Unclarity genuinely upsets me</span>. Thus, what I love most about design is translating raw information into a clear, useable designs.
         </p>
 
       </div>
@@ -676,13 +681,12 @@
           my-carousel-id="myCarousel-13"
           slideshow-images='["https://firebasestorage.googleapis.com/v0/b/andrea-vendrik-portfolio.appspot.com/o/sk_01.png?alt=media&token=c45245ac-e292-4881-bafa-7559e3a154cd",
           "https://firebasestorage.googleapis.com/v0/b/andrea-vendrik-portfolio.appspot.com/o/sk_05.png?alt=media&token=b36d0227-a726-4131-a6aa-03fa8913521e",
-          "https://firebasestorage.googleapis.com/v0/b/andrea-vendrik-portfolio.appspot.com/o/sk_06.png?alt=media&token=fb1d40ca-b5ad-49a4-818e-f933fc70faf6",
-          "https://firebasestorage.googleapis.com/v0/b/andrea-vendrik-portfolio.appspot.com/o/sk_04.png?alt=media&token=eabe7cf5-273f-4464-9fbd-6e56985da7a0"]'
+          "https://firebasestorage.googleapis.com/v0/b/andrea-vendrik-portfolio.appspot.com/o/sk_06.png?alt=media&token=fb1d40ca-b5ad-49a4-818e-f933fc70faf6"]'
           title="The chain of criminal justice"
           title-label="data visualisation"
           description-what="infographic"
           description-for="autonomous project about a report on criminal justice from 2007-2014">
-
+          To develop my infographic skills further, I decided to spend some time visually translating a report on criminal justice in the last decennium. The result is a poster that shows how crime and punishment have developed in the past years. (Spoiler: all numbers are dropping.)
           </portfolio-project>
 
           <portfolio-project id="project-ts"
@@ -883,11 +887,11 @@
       <!-- <img src="../portfolio-project/images/icon-03.svg"> -->
     </div>
 
-    <section class="text-container">
+    <section class="text-container" id="section-contact-me">
       <p>
         I am open to commissions.<br>
         Be it a visual identity, website, book or app, be it a big or small project, I can help you.
-        Have a look at my work and if it pleases you, get in touch! :-)
+        Have a look at my work and if it pleases you, get in touch! <span id="emoji-big">🎉</span>
       </p>
       <div id="contact-information">
         <div>
